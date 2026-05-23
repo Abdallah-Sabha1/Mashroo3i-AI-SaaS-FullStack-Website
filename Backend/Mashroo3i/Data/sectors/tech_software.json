@@ -1,0 +1,241 @@
+{
+  "_meta": {
+    "file": "tech_software.json",
+    "sector": "Tech & Software",
+    "sectorKey": "tech_software",
+    "confidence": "MEDIUM",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Jordan Strategy Forum / Invest Jordan ICT Report 2021",
+      "GEM Jordan 2024/2025",
+      "Ministry of ICT Jordan 2024",
+      "Jordan DoS 2024"
+    ]
+  },
+  "subSectors": [
+    "SaaS / Web App",
+    "Mobile App",
+    "B2B Software (ERP, CRM)",
+    "IT Services / Managed Services",
+    "BPO / Outsourcing",
+    "AI & Data Services"
+  ],
+  "examples_Amman": [
+    "Arabic SaaS tool",
+    "Local services mobile app",
+    "Fintech (Verity)",
+    "EdTech (Abwab)",
+    "Gaming studio (Tamatem)"
+  ],
+  "marketContext": {
+    "ictShareOfGDP_pct": 3.8,
+    "ictRevenue_USD": 2300000000,
+    "bpoRevenue_USD": 110000000,
+    "arabicContentShare_pct": 75,
+    "ictEmployees": 21906,
+    "techStartups_ofEarlyStage_pct": 4,
+    "topMNCs_inJordan": [
+      "Microsoft",
+      "Amazon",
+      "Cisco",
+      "Oracle",
+      "Expedia",
+      "Huawei",
+      "AutoDesk"
+    ],
+    "notableLocalStartups": [
+      "Abwab (EdTech/AI)",
+      "Eon Dental (tele-dentistry)",
+      "Verity (fintech)",
+      "Tamatem (mobile gaming)"
+    ],
+    "insight": "Low tech startup saturation in Jordan — only 4% of early-stage entrepreneurs are in tech. Strong opportunity."
+  },
+  "taxIncentives": {
+    "customsDuties_pct": 0,
+    "exportIncomeTax_pct": 0,
+    "ictServicesTax_pct": 0,
+    "localProfitTax_pct": 5,
+    "employmentSubsidy": "Gov covers 50% of new employee salaries for first 6 months (digital businesses)",
+    "note": "Best tax treatment in Jordan. Verify with Ministry of Digital Economy (MoDEE)."
+  },
+  "startupCost_JOD": {
+    "overall": {
+      "low": 3000,
+      "high": 30000,
+      "typical": 10000,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "solo_dev_saas": {
+        "low": 3000,
+        "high": 7000,
+        "typical": 4500,
+        "note": "Laptop + cloud hosting + licenses + registration."
+      },
+      "small_team_app": {
+        "low": 8000,
+        "high": 20000,
+        "typical": 12000,
+        "note": "2–3 devs + designer + hosting + launch marketing."
+      },
+      "it_services_agency": {
+        "low": 5000,
+        "high": 15000,
+        "typical": 8000,
+        "note": "Office deposit + equipment + team setup."
+      }
+    },
+    "note": "ICT is distance-less — low capital vs manufacturing. Biggest cost is talent."
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": {
+      "low": 500,
+      "high": 4000,
+      "typical": 1500,
+      "confidence": "MEDIUM"
+    },
+    "breakdown": {
+      "cloudHosting": {
+        "low": 30,
+        "high": 300,
+        "note": "AWS/GCP — scales with users."
+      },
+      "softwareLicenses": {
+        "low": 50,
+        "high": 200
+      },
+      "juniorDeveloper_total": {
+        "monthly": 860,
+        "note": "750 JOD salary + 110 SSC (14.25%). Source: DoS 2024/PayScale."
+      },
+      "seniorDeveloper_total": {
+        "monthly": 1028,
+        "note": "900 JOD salary + 128 SSC."
+      },
+      "officeOrCoworking": {
+        "low": 150,
+        "high": 800,
+        "note": "Many tech startups work remote/hybrid."
+      },
+      "marketing": {
+        "low": 100,
+        "high": 500
+      }
+    }
+  },
+  "margins": {
+    "saas": {
+      "grossMargin_pct": {
+        "low": 65,
+        "high": 85,
+        "typical": 75
+      },
+      "note": "High gross, heavy upfront dev cost."
+    },
+    "it_services": {
+      "grossMargin_pct": {
+        "low": 40,
+        "high": 65,
+        "typical": 52
+      }
+    },
+    "bpo": {
+      "grossMargin_pct": {
+        "low": 30,
+        "high": 50,
+        "typical": 40
+      }
+    },
+    "netMargin_pct": {
+      "low": 10,
+      "high": 35,
+      "typical": 20,
+      "confidence": "LOW",
+      "note": "Wide range based on team size and burn."
+    }
+  },
+  "pricingBenchmarks": {
+    "saas_monthly_JOD": {
+      "smb": "15–80",
+      "enterprise": "150–800",
+      "note": "Jordan market pricing."
+    },
+    "hourlyDev_JOD": {
+      "junior": "20–35",
+      "mid": "35–60",
+      "senior": "60–100"
+    },
+    "projectBased_JOD": {
+      "mobileApp": "3000–15000",
+      "webApp": "2000–10000",
+      "erp": "5000–25000"
+    },
+    "bpo_perSeat_USD": {
+      "low": 800,
+      "high": 1500
+    }
+  },
+  "salesCycle": {
+    "b2c_saas": {
+      "months": "0–1",
+      "note": "Freemium or self-serve."
+    },
+    "b2b_smb": {
+      "months": "1–3"
+    },
+    "b2b_enterprise": {
+      "months": "3–9",
+      "note": "Enterprise procurement cycles are slow."
+    }
+  },
+  "saasMetrics": {
+    "monthlyChurn_pct": {
+      "good": "<5",
+      "warning": "5–10",
+      "danger": ">10"
+    },
+    "cacPayback_months": {
+      "good": "<12",
+      "warning": "12–18",
+      "danger": ">18"
+    },
+    "magicNumber": "New MRR / S&M spend > 0.75 = scalable growth engine"
+  },
+  "breakEven_months": {
+    "low": 6,
+    "high": 24,
+    "typical": 14,
+    "confidence": "LOW",
+    "note": "SaaS requires customer accumulation. IT services: 3–6 months."
+  },
+  "commonRisks": [
+    "Only 4% of Jordanian early-stage entrepreneurs are in tech — thin local buyer pool",
+    "Software piracy reduces local revenue potential",
+    "Brain drain — top talent migrates abroad for higher salaries",
+    "Enterprise clients expect full support from lean startup teams"
+  ],
+  "redFlags": {
+    "monthlyChurnAbove_pct": 10,
+    "cacPaybackAbove_months": 18,
+    "grossMarginBelow_pct": 50,
+    "burnRateWarning": "If monthly burn > 3× MRR — raise or pivot before runway ends"
+  },
+  "jordanContext": {
+    "primaryExportMarket": "Export-ready sector with Arabic language advantage",
+    "ecosystemSupport": [
+      "OASIS500",
+      "JHub (Microsoft)",
+      "Jordan Valley Stars",
+      "USAID Jordan"
+    ],
+    "coworkingSpaces": [
+      "Zinc Amman",
+      "Liwwa Hub",
+      "Antwork",
+      "Regus"
+    ],
+    "remoteFriendly": "Strong broadband + young talent pool = competitive for remote/hybrid tech teams"
+  }
+}

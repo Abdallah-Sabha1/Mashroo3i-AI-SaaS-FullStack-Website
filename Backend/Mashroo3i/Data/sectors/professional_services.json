@@ -1,0 +1,175 @@
+{
+  "_meta": {
+    "file": "professional_services.json",
+    "sector": "Professional Services",
+    "sectorKey": "professional_services",
+    "confidence": "HIGH",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Jordan DoS 2024",
+      "Jordan Investment Competitiveness Report 2022",
+      "Jordan DoS 2024"
+    ]
+  },
+  "subSectors": [
+    "Freelancer (solo)",
+    "Small Agency (2–4 people)",
+    "Boutique Agency (5–10 people)"
+  ],
+  "specializations": [
+    "Graphic Design",
+    "Web Development",
+    "Digital Marketing",
+    "Accounting / Bookkeeping",
+    "HR Consulting",
+    "Copywriting / Content",
+    "IT Support"
+  ],
+  "examples_Amman": [
+    "Freelance graphic designer (Upwork + local)",
+    "2-person web dev shop",
+    "Social media manager",
+    "Accounting service for SMEs",
+    "Digital marketing agency"
+  ],
+  "startupCost_JOD": {
+    "overall": {
+      "low": 2000,
+      "high": 15000,
+      "typical": 5500,
+      "confidence": "HIGH"
+    },
+    "bySize": {
+      "solo_freelancer": {
+        "low": 2000,
+        "high": 4000,
+        "typical": 2800,
+        "note": "Laptop + software + website + business registration ~300 JOD."
+      },
+      "small_agency_2_4": {
+        "low": 5000,
+        "high": 10000,
+        "typical": 6500,
+        "note": "Office deposit + equipment + team onboarding + launch marketing."
+      }
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": {
+      "low": 400,
+      "high": 2500,
+      "typical": 1200,
+      "confidence": "MEDIUM"
+    },
+    "bySize": {
+      "solo_home": {
+        "software": 50,
+        "internet_phone": 20,
+        "marketing": 50,
+        "other": 30,
+        "total_range": "150–200"
+      },
+      "small_agency": {
+        "officeRent": 600,
+        "utilities": 50,
+        "staff_1employee": 434,
+        "staffNote": "380 JOD base + 54 JOD SSC. Junior: 350–420 JOD base.",
+        "software": 100,
+        "marketing": 100,
+        "other": 100,
+        "total_range": "1380–1700"
+      }
+    }
+  },
+  "margins": {
+    "grossMargin_pct": {
+      "low": 50,
+      "high": 75,
+      "typical": 62,
+      "confidence": "HIGH",
+      "note": "Services = time × rate. Margin driven by utilization and pricing."
+    },
+    "netMargin_pct": {
+      "low": 20,
+      "high": 45,
+      "typical": 30,
+      "confidence": "MEDIUM"
+    }
+  },
+  "pricingBenchmarks_JOD": {
+    "hourlyRate_midLevel": {
+      "low": 20,
+      "high": 50,
+      "typical": 32,
+      "roles": "Design, marketing, copywriting"
+    },
+    "hourlyRate_senior": {
+      "low": 50,
+      "high": 100,
+      "typical": 70,
+      "roles": "Dev, strategy, specialized"
+    },
+    "monthlyRetainer_small": {
+      "low": 400,
+      "high": 1200,
+      "typical": 700,
+      "note": "Social media, bookkeeping — 4–8 hrs/month"
+    },
+    "monthlyRetainer_medium": {
+      "low": 1200,
+      "high": 3500,
+      "typical": 2000,
+      "note": "Full digital marketing, HR — 20–40 hrs/month"
+    },
+    "projectBased": {
+      "low": 1000,
+      "high": 10000,
+      "typical": 4000,
+      "examples": "Website 3K–8K | Brand identity 2K–5K | Campaign 3K–12K"
+    },
+    "confidence": "MEDIUM",
+    "note": "Payment terms often 30–60 days."
+  },
+  "salesCycle_months": {
+    "low": 0.5,
+    "high": 3,
+    "typical": 1.5,
+    "confidence": "MEDIUM",
+    "note": "Referral closes in days. Cold outreach: 1.5–3 months. Wasta cuts cycle 30–50%."
+  },
+  "winRate_pct": {
+    "low": 20,
+    "high": 50,
+    "typical": 35,
+    "confidence": "LOW",
+    "note": "Referrals: 50–60% win rate. Cold outreach: 15–25%."
+  },
+  "clientRetentionRate_pct": {
+    "low": 60,
+    "high": 90,
+    "typical": 80,
+    "confidence": "MEDIUM",
+    "note": "Retention services 80–90%. One-off projects 60–70%."
+  },
+  "breakEven_months": {
+    "low": 2,
+    "high": 6,
+    "typical": 4,
+    "confidence": "MEDIUM",
+    "note": "Solo + 1–2 retainer clients: 2–3 months. Agency with team: 4–6 months."
+  },
+  "redFlags": {
+    "ltvCacMinimum": 3,
+    "breakEvenMax_months": 9,
+    "lowClientRetention_pct": 60,
+    "clientConcentrationWarning": "If top 2 clients = 50%+ revenue, diversify urgently.",
+    "paymentTermsWarning": "Enforce 30-day payment terms with late-payment penalties."
+  },
+  "jordanContext": {
+    "wastaImpact": "Personal connections accelerate closing 30–50%. Warm referrals 3–4x faster than cold.",
+    "companyRegistration_JOD": "200–500 (one-time)",
+    "startupActIncentive": "0% corporate income tax for 3 years — verify at JEDCO",
+    "paymentTerms": "30–60 day terms standard. Maintain 2–3 months cash runway before first inflow."
+  }
+}

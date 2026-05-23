@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "file": "jordan_economy_snapshot.json",
+    "purpose": "Shared macroeconomic context injected into ALL sector prompts",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Jordan Department of Statistics (DoS) 2024",
+      "Social Security Corporation (SSC) Jordan 2025",
+      "World Bank Jordan Economic Monitor 2024",
+      "DataReportal Digital 2024: Jordan",
+      "Statista eCommerce Jordan 2025",
+      "GEM Jordan National Report 2024/2025"
+    ]
+  },
+  "currency": "JOD",
+  "geography": "Greater Amman Metropolitan Area",
+  "macroeconomics": {
+    "gdpGrowth": 2.7,
+    "gdpGrowthUnit": "% (2023 actual, World Bank)",
+    "gdpGrowthProjected2024": 2.4,
+    "inflation": 2.1,
+    "inflationUnit": "% (2023 actual)",
+    "inflationRange2024_2025": "1.5-2.2%"
+  },
+  "laborMarket": {
+    "minimumWage": 290,
+    "minimumWageUnit": "JOD/month",
+    "minimumWageUSD": 410,
+    "minimumWagePeriod": "Fixed 2025-2027 by Tripartite Committee decree",
+    "averageSalary": 613,
+    "averageSalaryUnit": "JOD/month (~865 USD)",
+    "medianSalary": 540,
+    "salaryBySegment": {
+      "private_sector_estimate": 510,
+      "public_sector_estimate": 646,
+      "professionals": 700,
+      "skilled_worker_amman_range": "450-850 JOD",
+      "unit": "JOD/month"
+    },
+    "employerSocialSecurityRate": 14.25,
+    "employeeSocialSecurityRate": 7.5,
+    "incomeTax": "5-30% progressive brackets",
+    "unemploymentRate": 21.4,
+    "youthUnemployment": "40%+",
+    "laborForceParticipation": 34.1
+  },
+  "companyRegistration": {
+    "registrationFee": "250 JOD or 0.002 of capital (whichever is greater)",
+    "chamberOfCommerceFee": "50-1500 JOD",
+    "requiredDocuments": [
+      "Completed application form",
+      "Memorandum and articles of association",
+      "Proof of 50% capital deposit",
+      "Copy of national ID"
+    ],
+    "startupActBenefit": "0% corporate income tax for first 3 years (check eligibility)"
+  },
+  "digitalLandscape": {
+    "internetPenetration": 91.0,
+    "socialMediaPenetration": 56.2,
+    "mobilePenetration": 80.4,
+    "urbanPopulationShare": 92.1,
+    "medianAge": 24.2,
+    "youthUnder30": "70% of population",
+    "primaryChannels": ["Instagram", "TikTok", "Facebook", "WhatsApp"],
+    "marketingImplication": "Mobile-first, urban, young market. Instagram/TikTok are primary B2C acquisition channels."
+  },
+  "ecommerceMarket": {
+    "marketValueUSD_2025": 2553000000,
+    "CAGR_2025_2029": 9.4,
+    "userPenetration_2025": 23.8,
+    "paymentBehavior": "Cash on Delivery (COD) dominant. Card penetration growing.",
+    "returnRateEstimate": "8-14%"
+  },
+  "startupEcosystem": {
+    "fundingRaised_2024_USD": 300000000,
+    "fundingGrowthYoY": "60% YoY",
+    "earlyStageActivityTEA_2024": 21.1,
+    "youthShareOfEntrepreneurs": "60% of TEA under age 34",
+    "femaleEntrepreneurshipTEA_2024": 20,
+    "domesticMarketReliance": "85% of startups have no international revenue",
+    "topFailureReasons": [
+      "Not profitable (40% of closures)",
+      "Problems securing finance (21%)"
+    ],
+    "totalSMEs": 180000,
+    "SMEShareOfRegisteredCompanies": "98%"
+  },
+  "consumerBehavior": {
+    "dominantShoppingChannels": ["Instagram", "Talabat/Careem", "OpenSooq", "Facebook Marketplace", "Noon.com"],
+    "paymentPreference": "COD dominant, growing card adoption",
+    "onlineShoppers": "36% of internet users have purchased online",
+    "trustDrivers": "Vendor trust and perceived usefulness are key"
+  },
+  "officeRentBenchmarks": {
+    "smallCommercial_55sqm": "3600 JOD/year (Khalda area)",
+    "office_115sqm_furnished": "24000 JOD/year",
+    "office_141sqm_Abdali": "35000 JOD/year",
+    "office_240sqm_3rdCircle": "25000 JOD/year"
+  },
+  "cashFlowWarning": "Standard B2B payment terms: 30-60 days. Plan 2-3 months runway before first cash inflow.",
+  "commonRisksAllSectors": [
+    "Hidden upfront costs: registration, legal, tax, social security",
+    "Late client payments (30-60 day terms)",
+    "Small domestic market — 85% of startups stay local",
+    "Fear of failure: 48% cite it as barrier to starting"
+  ]
+}

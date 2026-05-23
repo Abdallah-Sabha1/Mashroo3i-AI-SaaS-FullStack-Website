@@ -1,0 +1,120 @@
+{
+  "_meta": {
+    "file": "food_and_beverage.json",
+    "sector": "Food & Beverage",
+    "sectorKey": "food_and_beverage",
+    "confidence": "HIGH",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Xmap.ai Jordan Restaurants & Cafes 2024",
+      "SMERGERS Amman F&B listings Jan-Mar 2025",
+      "Talabat Holding plc FY2024 results",
+      "amman_startup_benchmarks_v3.json"
+    ]
+  },
+  "label": "Food & Beverage",
+  "labelAr": "مطاعم وكافيهات",
+  "description": "Cafes, restaurants, QSR, cloud kitchens, dessert shops, F&B delivery",
+  "subSectors": ["Cloud Kitchen (delivery only)", "QSR/Fast Casual", "Cafe (coffee-focused)", "Restaurant (full service)", "Dessert/Sweet Shop"],
+  "examplesAmman": ["Instagram dessert shop", "Cloud kitchen on Talabat", "Casual cafe in Jabal Amman", "Budget QSR in East Amman", "Premium cafe in Sweifieh"],
+
+  "startupCost": {
+    "low": 8000, "high": 40000, "median": 16500, "typical": 15000, "unit": "JOD",
+    "confidence": "HIGH",
+    "bySubSector": {
+      "cloud_kitchen": { "low": 8000, "high": 12000, "typical": 9500, "notes": "Space rental + kitchen setup + delivery integration. No dine-in buildout." },
+      "cafe": { "low": 15000, "high": 28000, "typical": 18000, "notes": "Buildout, espresso machine, POS, furniture. Higher in West Amman." },
+      "qsr_takeout": { "low": 12000, "high": 22000, "typical": 16000, "notes": "Smaller footprint, ~20 sqm." },
+      "restaurant_full": { "low": 25000, "high": 40000, "typical": 32000, "notes": "Includes fit-out, kitchen equipment, permits, initial inventory." }
+    }
+  },
+
+  "monthlyFixedCosts": {
+    "low": 1000, "high": 3500, "typical": 1800, "unit": "JOD/month",
+    "confidence": "HIGH",
+    "breakdown": {
+      "rent": {
+        "west_amman": { "low": 800, "high": 1500, "typical": 1100, "notes": "Sweifieh, Abdoun, Shmeisani — premium, high foot traffic" },
+        "central_amman": { "low": 500, "high": 900, "typical": 650, "notes": "Downtown, Jabal Amman" },
+        "east_amman": { "low": 300, "high": 600, "typical": 400, "notes": "Price-sensitive market" }
+      },
+      "staff_1_employee": { "low": 400, "high": 580, "typical": 460, "unit": "JOD/month", "notes": "Includes 14.25% employer SSC. Min wage 290 + SSC ~41 = 331 total. Typical F&B worker: 380 base + 54 SSC = 434 JOD." },
+      "utilities": { "low": 80, "high": 200, "typical": 120, "unit": "JOD/month" },
+      "delivery_platform_fees": { "low": 200, "high": 400, "typical": 300, "unit": "JOD/month", "notes": "~15% of delivery sales (Talabat/Careem)" },
+      "other": { "low": 100, "high": 400, "typical": 200, "notes": "Packaging, phone, marketing, maintenance" }
+    }
+  },
+
+  "grossMargin": {
+    "low": 25, "high": 50, "typical": 33, "unit": "%", "confidence": "HIGH",
+    "byCategory": {
+      "beverages": { "low": 50, "high": 65, "typical": 58, "notes": "Coffee, tea, juices — low COGS, high perceived value" },
+      "desserts_sweets": { "low": 60, "high": 75, "typical": 68, "notes": "High margin — premium pricing in Amman" },
+      "hot_food_meals": { "low": 25, "high": 45, "typical": 35, "notes": "Higher COGS due to protein, vegetables" },
+      "salads_cold": { "low": 20, "high": 35, "typical": 27, "notes": "Perishable, thin margins" }
+    }
+  },
+
+  "netMargin": { "low": 5, "high": 18, "typical": 12, "unit": "%", "confidence": "MEDIUM" },
+
+  "averageOrderValue": {
+    "west_amman": { "low": 9, "high": 25, "typical": 16, "unit": "JOD/person", "notes": "Sweifieh, Abdoun, Shmeisani" },
+    "central_amman": { "low": 6, "high": 14, "typical": 10, "unit": "JOD/person" },
+    "east_amman": { "low": 3, "high": 8, "typical": 5, "unit": "JOD/person", "notes": "Price-sensitive, QSR-friendly" },
+    "confidence": "HIGH"
+  },
+
+  "customerAcquisitionCost": {
+    "word_of_mouth": { "low": 2, "high": 8, "typical": 4, "unit": "JOD" },
+    "instagram_organic": { "low": 4, "high": 15, "typical": 9, "unit": "JOD" },
+    "instagram_paid": { "low": 12, "high": 35, "typical": 22, "unit": "JOD" },
+    "google_local_ads": { "low": 15, "high": 40, "typical": 25, "unit": "JOD" },
+    "delivery_platform": { "low": 20, "high": 50, "typical": 30, "unit": "JOD", "notes": "Implicit CAC via 15% commission" },
+    "confidence": "MEDIUM"
+  },
+
+  "monthlyChurnRate": { "low": 15, "high": 35, "typical": 25, "unit": "%", "confidence": "MEDIUM",
+    "notes": "High due to competition, novelty-seeking, price sensitivity. Loyalty programs reduce to 8-12%." },
+
+  "breakEvenMonths": {
+    "cloud_kitchen": { "low": 5, "high": 7, "typical": 6 },
+    "cafe": { "low": 8, "high": 12, "typical": 10 },
+    "restaurant": { "low": 12, "high": 14, "typical": 13 },
+    "overall": { "low": 5, "high": 14, "typical": 9 },
+    "unit": "months", "confidence": "MEDIUM"
+  },
+
+  "annualRevenueYear1": {
+    "conservative": { "low": 14000, "high": 40000, "typical": 24000, "unit": "JOD" },
+    "realistic": { "low": 28000, "high": 72000, "typical": 48000, "unit": "JOD", "notes": "40-50 transactions/day, AOV 8-15 JOD, 4-6 month ramp-up" },
+    "optimistic": { "low": 50000, "high": 120000, "typical": 80000, "unit": "JOD" }
+  },
+
+  "redFlagThresholds": {
+    "grossMarginWarning": 20, "grossMarginDanger": 15,
+    "ltvCacRatioMin": 3, "breakEvenMonthsMax": 18, "churnDanger": 40,
+    "notes": "F&B: high-volume, thin-margin. Margin <20% AND churn >30% = trouble."
+  },
+
+  "deliveryPlatformContext": {
+    "talabat_position": "#1 food delivery in Jordan",
+    "commission": "15-30% per order",
+    "strategy": "Use platform for discovery, convert to own WhatsApp/Instagram channel to reduce commission drag"
+  },
+
+  "keySuccessFactors": [
+    "Location is critical — West Amman allows premium pricing, East requires volume",
+    "Cloud kitchens: fastest break-even with lowest risk",
+    "Instagram content drives organic discovery — invest in food photography",
+    "Loyalty programs reduce 25% churn to 8-12%",
+    "Avoid Talabat dependency — build own ordering channel (WhatsApp)"
+  ],
+
+  "commonRisks": [
+    "Rent increases in prime West Amman locations",
+    "Talabat commission (15-30%) erodes margins on delivery orders",
+    "High staff turnover in F&B sector",
+    "Seasonal fluctuations (Ramadan, summer heat)",
+    "Novelty-seeking consumers — high churn in year 1"
+  ]
+}

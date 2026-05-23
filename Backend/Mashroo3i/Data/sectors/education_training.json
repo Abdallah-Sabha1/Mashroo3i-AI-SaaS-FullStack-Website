@@ -1,0 +1,237 @@
+{
+  "_meta": {
+    "file": "education_training.json",
+    "sector": "Education & Training",
+    "sectorKey": "education_training",
+    "confidence": "MEDIUM",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "UNESCO/MoE Jordan TVET Review 2023",
+      "GEM Jordan 2024/2025",
+      "Jordan DoS 2024"
+    ]
+  },
+  "subSectors": [
+    "Private Tutoring (K-12)",
+    "Online Courses / eLearning",
+    "Vocational / Skills Training",
+    "Corporate Training (B2B)",
+    "Language Schools",
+    "Test Prep (IELTS, Tawjihi)",
+    "Bootcamps / Coding Schools"
+  ],
+  "examples_Amman": [
+    "Tawjihi prep center East Amman",
+    "Online Arabic-English tutoring",
+    "Coding bootcamp",
+    "Corporate Excel/ERP training",
+    "IELTS prep school"
+  ],
+  "marketContext": {
+    "youthUnder30_pct": 70,
+    "typicalTVETAge_pct_ofPopulation": 10,
+    "youthEntrepreneurship_pct_ofTEA": 60,
+    "servicesSectorGDP_pct": 71.6,
+    "informalEmployment_pct": 50,
+    "publicCompetitors": {
+      "VTC": "34 centers, 20K learners/year",
+      "BAU": "16 community colleges",
+      "NET": "18 centers, 100+ programmes"
+    },
+    "marketGap": "Private digital skills, English, coding — high demand, underserved by public institutions.",
+    "insight": "60% of early-stage entrepreneurs aged 18–34. Young, underemployed, skills-hungry market."
+  },
+  "startupCost_JOD": {
+    "overall": {
+      "low": 500,
+      "high": 20000,
+      "typical": 7000,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "online_solo_tutor": {
+        "low": 500,
+        "high": 2000,
+        "typical": 1000,
+        "note": "Camera, mic, Zoom, basic website."
+      },
+      "online_course_platform": {
+        "low": 2000,
+        "high": 8000,
+        "typical": 4000,
+        "note": "Recording + editing + platform (Teachable/Thinkific)."
+      },
+      "physical_training_center": {
+        "low": 8000,
+        "high": 20000,
+        "typical": 12000,
+        "note": "Rent + chairs + projector + A/C + MoE registration."
+      },
+      "corporate_training_b2b": {
+        "low": 2000,
+        "high": 6000,
+        "typical": 3500,
+        "note": "Curriculum development + materials + registration."
+      }
+    },
+    "legalNote": "Physical training centers must register with Ministry of Education. TVET governed by VTC Law (1985) + 2019 amendments."
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": {
+      "low": 150,
+      "high": 3000,
+      "typical": 1000,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "online_solo": {
+        "platform": 20,
+        "marketing": 100,
+        "software": 30,
+        "total_range": "150–250"
+      },
+      "online_course": {
+        "hosting": 50,
+        "marketing": 300,
+        "tools": 80,
+        "total_range": "400–600"
+      },
+      "physical_center": {
+        "rent": 800,
+        "utilities": 80,
+        "instructor_1": 500,
+        "marketing": 150,
+        "other": 100,
+        "total_range": "1500–2000"
+      }
+    }
+  },
+  "margins": {
+    "onlineCourse": {
+      "grossMargin_pct": {
+        "low": 70,
+        "high": 90,
+        "typical": 80
+      },
+      "note": "Near-zero COGS after content creation. Scale without cost increase."
+    },
+    "liveTutoring": {
+      "grossMargin_pct": {
+        "low": 60,
+        "high": 80,
+        "typical": 70
+      }
+    },
+    "physicalCenter": {
+      "grossMargin_pct": {
+        "low": 35,
+        "high": 60,
+        "typical": 48
+      },
+      "note": "Rent + instructor salaries are main costs."
+    },
+    "corporateB2B": {
+      "grossMargin_pct": {
+        "low": 50,
+        "high": 75,
+        "typical": 62
+      }
+    },
+    "netMargin_pct": {
+      "low": 15,
+      "high": 45,
+      "typical": 25,
+      "confidence": "LOW"
+    }
+  },
+  "pricingBenchmarks_JOD": {
+    "privateTutoring_hourly": {
+      "low": 8,
+      "high": 30,
+      "typical": 15,
+      "note": "Tawjihi subjects premium. Online: 10–20 JOD/hr."
+    },
+    "onlineCourse_oneTime": {
+      "low": 20,
+      "high": 200,
+      "typical": 60
+    },
+    "bootcamp_total": {
+      "low": 300,
+      "high": 1500,
+      "typical": 600
+    },
+    "monthlyMembership": {
+      "low": 30,
+      "high": 150,
+      "typical": 60
+    },
+    "corporateTraining_perDay": {
+      "low": 200,
+      "high": 800,
+      "typical": 400,
+      "note": "Per group, not per person."
+    },
+    "confidence": "MEDIUM"
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": {
+      "low": 2,
+      "high": 10,
+      "typical": 5
+    },
+    "instagramOrganic": {
+      "low": 5,
+      "high": 20,
+      "typical": 10
+    },
+    "paidAds": {
+      "low": 15,
+      "high": 50,
+      "typical": 25
+    },
+    "schoolPartnerships": {
+      "low": 5,
+      "high": 20,
+      "typical": 10
+    },
+    "confidence": "LOW"
+  },
+  "churn": {
+    "ongoing_monthly_pct": {
+      "low": 5,
+      "high": 25,
+      "typical": 12
+    },
+    "reEnrollmentRate_pct": {
+      "low": 25,
+      "high": 60,
+      "typical": 40
+    }
+  },
+  "breakEven_months": {
+    "low": 3,
+    "high": 12,
+    "typical": 7,
+    "confidence": "LOW",
+    "note": "Online: 3–5 months. Physical center: 6–12 months."
+  },
+  "commonRisks": [
+    "Negative perception of vocational training vs university degrees",
+    "Seasonal lumpiness: back-to-school spike, Tawjihi season, summer crash",
+    "Government VTC offers free/subsidized competition",
+    "Low Tawjihi seasons create enrollment crashes in June–July"
+  ],
+  "redFlags": {
+    "reEnrollmentBelow_pct": 25,
+    "grossMarginBelow_pct": 40,
+    "breakEvenAbove_months": 15
+  },
+  "jordanContext": {
+    "backToSchool": "August–September: 1.5x enrollment spike",
+    "tawjihiSeason": "April–June: peak for exam prep",
+    "acquisitionChannel": "WhatsApp groups + word of mouth — parents share tutor recommendations",
+    "onlineGrowth": "Post-COVID online tutoring normalized."
+  }
+}

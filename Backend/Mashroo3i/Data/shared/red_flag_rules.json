@@ -1,0 +1,137 @@
+{
+  "_meta": {
+    "file": "red_flag_rules.json",
+    "purpose": "Universal red flag thresholds for ALL sectors. AI checks user inputs and surfaces warnings.",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07"
+  },
+  "rules": {
+    "ltvCacRatio": {
+      "label": "LTV : CAC Ratio",
+      "formula": "LTV = (AOV × GrossMargin%) / MonthlyChurnRate",
+      "thresholds": {
+        "danger": {
+          "value": 1,
+          "message": "LTV:CAC below 1:1 — losing money on every customer acquired. Unsustainable."
+        },
+        "warning": {
+          "value": 3,
+          "message": "LTV:CAC below 3:1 — margins tight. Reprice or cut acquisition cost."
+        },
+        "healthy": {
+          "value": 3,
+          "message": "LTV:CAC at 3:1 or above — healthy unit economics."
+        }
+      }
+    },
+    "grossMargin": {
+      "label": "Gross Profit Margin",
+      "thresholds": {
+        "danger": {
+          "value_pct": 15,
+          "message": "Gross margin under 15% — almost no room to cover fixed costs."
+        },
+        "warning": {
+          "value_pct": 25,
+          "message": "Gross margin under 25% — pricing or sourcing needs work."
+        },
+        "healthy": {
+          "value_pct": 40,
+          "message": "Gross margin above 40% — solid foundation."
+        }
+      }
+    },
+    "netMargin": {
+      "label": "Net Profit Margin",
+      "thresholds": {
+        "danger": {
+          "value_pct": 0,
+          "message": "Negative net margin — burning cash every month."
+        },
+        "warning": {
+          "value_pct": 8,
+          "message": "Net margin under 8% — any shock will push you negative."
+        },
+        "healthy": {
+          "value_pct": 15,
+          "message": "Net margin 15%+ — strong profitability."
+        }
+      }
+    },
+    "breakEvenMonths": {
+      "label": "Break-Even Timeline",
+      "thresholds": {
+        "danger": {
+          "value_months": 36,
+          "message": "Break-even beyond 3 years — rethink the financial model."
+        },
+        "warning": {
+          "value_months": 18,
+          "message": "Break-even beyond 18 months — risky for bootstrapped business."
+        },
+        "healthy": {
+          "value_months": 12,
+          "message": "Break-even within 12 months — manageable."
+        }
+      }
+    },
+    "monthlyChurn": {
+      "label": "Monthly Customer Churn Rate",
+      "thresholds": {
+        "danger": {
+          "value_pct": 50,
+          "message": "50%+ monthly churn — business not viable."
+        },
+        "warning": {
+          "value_pct": 35,
+          "message": "35%+ monthly churn — leaking customers faster than acquiring."
+        },
+        "healthy": {
+          "value_pct": 15,
+          "message": "Under 15% monthly churn — solid retention."
+        }
+      }
+    },
+    "clientConcentration": {
+      "label": "Client Concentration Risk (B2B)",
+      "thresholds": {
+        "danger": {
+          "value_pct": 70,
+          "message": "Top 2 clients = 70%+ of revenue. One exit kills the business."
+        },
+        "warning": {
+          "value_pct": 50,
+          "message": "Top 2 clients = 50%+ of revenue. Diversify urgently."
+        },
+        "healthy": {
+          "value_pct": 30,
+          "message": "No single client above 30% — healthy diversification."
+        }
+      }
+    },
+    "cashRunway": {
+      "label": "Cash Runway",
+      "thresholds": {
+        "danger": {
+          "value_months": 1,
+          "message": "Under 1 month runway — critical. Act immediately."
+        },
+        "warning": {
+          "value_months": 3,
+          "message": "Under 3 months runway — raise capital or reduce burn now."
+        },
+        "healthy": {
+          "value_months": 6,
+          "message": "6+ months runway — sustainable pace."
+        }
+      }
+    }
+  },
+  "jordanSpecificWarnings": [
+    "COD dominance: budget 10–15% of delivery orders for refusal/returns — they will not convert to cash.",
+    "B2B payment terms 30–60 days are standard — revenue month does not equal cash month.",
+    "21.4% unemployment = large talent pool, but also means low consumer spending power.",
+    "Do NOT build base-case revenue on viral social media scenarios — model it as upside only.",
+    "Seasonal spikes (Ramadan, back-to-school, summer) can distort monthly benchmarks by ±40%."
+  ]
+}

@@ -1,0 +1,299 @@
+{
+  "_meta": {
+    "file": "health_wellness.json",
+    "sector": "Health & Wellness",
+    "sectorKey": "health_wellness",
+    "confidence": "MEDIUM",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Invest Jordan Healthcare Profile",
+      "Ministry of Health Jordan",
+      "Bayut.jo listings",
+      "GEM Jordan 2024/2025"
+    ]
+  },
+  "subSectors": [
+    "Gym / Fitness Studio",
+    "Nutrition & Diet Consulting",
+    "Beauty Salon / Barber",
+    "Wellness & Spa",
+    "Home Healthcare",
+    "Physiotherapy / Rehab Clinic",
+    "Dental / Medical Clinic",
+    "Mental Health / Coaching"
+  ],
+  "examples_Amman": [
+    "Women's-only gym Khalda",
+    "Nutrition consulting (online+in-person)",
+    "Beauty salon Sweifieh",
+    "Home physiotherapy service",
+    "Dental clinic 4th Circle",
+    "Online life coaching"
+  ],
+  "marketContext": {
+    "healthcareGDPShare_pct": 8.9,
+    "healthcareGDPContribution_pct": 3.2,
+    "healthcareExports_USD": 280000000,
+    "physiciansPerPer10k": 27.8,
+    "privateHospitals": 71,
+    "publicHospitals": 47,
+    "medicalTourism_patientsYearly": 250000,
+    "insight": "Jordan healthcare is world-class relative to GDP. B2C wellness (fitness, nutrition, mental health) is underserved."
+  },
+  "startupCost_JOD": {
+    "overall": {
+      "low": 500,
+      "high": 80000,
+      "typical": 15000,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "online_wellness_coaching": {
+        "low": 500,
+        "high": 2000,
+        "typical": 1000,
+        "note": "Phone, Zoom, social media, website."
+      },
+      "home_service": {
+        "low": 2000,
+        "high": 6000,
+        "typical": 3500,
+        "note": "Equipment, transport, Ministry of Health license 300–500 JOD."
+      },
+      "beauty_salon_small": {
+        "low": 8000,
+        "high": 20000,
+        "typical": 12000,
+        "note": "Buildout + chairs + equipment + municipality license."
+      },
+      "gym_studio": {
+        "low": 15000,
+        "high": 40000,
+        "typical": 22000,
+        "note": "Equipment-heavy. Treadmills + weights + A/C + buildout."
+      },
+      "physiotherapy_clinic": {
+        "low": 10000,
+        "high": 30000,
+        "typical": 18000
+      },
+      "medical_clinic": {
+        "low": 50000,
+        "high": 180000,
+        "typical": 90000,
+        "note": "Medical equipment $50K–$150K alone. MoH license required."
+      }
+    },
+    "legalRequirements": {
+      "homeHealthcareLicense_JOD": 300,
+      "annualInspectionFee_JOD": 200,
+      "medicalClinicLicense": "Ministry of Health approval — varies by specialty",
+      "beautyLicense": "Municipality license required. Cost varies by Amman district."
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": {
+      "low": 170,
+      "high": 5000,
+      "typical": 2000,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "online_coaching": {
+        "tools": 20,
+        "marketing": 150,
+        "total_range": "170–300"
+      },
+      "beauty_salon": {
+        "rent": 700,
+        "utilities": 100,
+        "staff_1": 434,
+        "supplies": 200,
+        "marketing": 100,
+        "total_range": "1500–2000"
+      },
+      "gym_small": {
+        "rent": 900,
+        "utilities": 300,
+        "staff_1": 434,
+        "maintenance": 150,
+        "marketing": 150,
+        "total_range": "2000–3000"
+      },
+      "physiotherapy": {
+        "rent": 600,
+        "equipment_maintenance": 100,
+        "staff": 600,
+        "marketing": 100,
+        "total_range": "1500–2500"
+      }
+    }
+  },
+  "rentBenchmarks_JOD_yearly": {
+    "clinic_70sqm_5thCircle": 12000,
+    "commercial_55sqm_Tela_Ali": 3600,
+    "note": "Divide by 12 for monthly. West Amman medical locations 30–50% premium."
+  },
+  "margins": {
+    "online_coaching": {
+      "grossMargin_pct": {
+        "low": 70,
+        "high": 90,
+        "typical": 80
+      }
+    },
+    "beauty_salon": {
+      "grossMargin_pct": {
+        "low": 45,
+        "high": 65,
+        "typical": 55
+      }
+    },
+    "gym": {
+      "grossMargin_pct": {
+        "low": 40,
+        "high": 65,
+        "typical": 52
+      }
+    },
+    "physiotherapy": {
+      "grossMargin_pct": {
+        "low": 50,
+        "high": 70,
+        "typical": 60
+      }
+    },
+    "medical_clinic": {
+      "grossMargin_pct": {
+        "low": 35,
+        "high": 60,
+        "typical": 48
+      }
+    },
+    "netMargin_pct": {
+      "low": 10,
+      "high": 35,
+      "typical": 20,
+      "confidence": "LOW"
+    }
+  },
+  "pricingBenchmarks_JOD": {
+    "gymMembership_monthly": {
+      "low": 25,
+      "high": 80,
+      "typical": 45
+    },
+    "personalTraining_session": {
+      "low": 15,
+      "high": 50,
+      "typical": 25
+    },
+    "nutritionConsult_session": {
+      "low": 20,
+      "high": 60,
+      "typical": 35
+    },
+    "beautyHaircut_women": {
+      "low": 15,
+      "high": 60,
+      "typical": 30
+    },
+    "physiotherapy_session": {
+      "low": 25,
+      "high": 70,
+      "typical": 40
+    },
+    "onlineCoaching_monthly": {
+      "low": 50,
+      "high": 200,
+      "typical": 90
+    },
+    "confidence": "MEDIUM"
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": {
+      "low": 2,
+      "high": 10,
+      "typical": 5
+    },
+    "instagramOrganic": {
+      "low": 5,
+      "high": 20,
+      "typical": 10
+    },
+    "paidAds": {
+      "low": 15,
+      "high": 50,
+      "typical": 25
+    },
+    "googleMaps": {
+      "low": 10,
+      "high": 35,
+      "typical": 20,
+      "note": "Google My Business critical for clinic/salon discovery."
+    },
+    "confidence": "LOW"
+  },
+  "monthlyChurn_pct": {
+    "gym": {
+      "low": 8,
+      "high": 25,
+      "typical": 15,
+      "note": "Spikes in summer heat and Ramadan."
+    },
+    "beauty_salon": {
+      "low": 5,
+      "high": 20,
+      "typical": 10,
+      "note": "Very sticky if quality is consistent."
+    },
+    "coaching": {
+      "low": 10,
+      "high": 30,
+      "typical": 18
+    }
+  },
+  "breakEven_months": {
+    "online_coaching": {
+      "low": 1,
+      "high": 4,
+      "typical": 2
+    },
+    "beauty_salon": {
+      "low": 6,
+      "high": 14,
+      "typical": 9
+    },
+    "gym": {
+      "low": 8,
+      "high": 18,
+      "typical": 12
+    },
+    "medical_clinic": {
+      "low": 12,
+      "high": 36,
+      "typical": 20,
+      "note": "High startup cost = slow break-even."
+    },
+    "confidence": "LOW"
+  },
+  "commonRisks": [
+    "Medical clinics: first months rarely cover payroll — need JOD 5K–15K working capital reserve",
+    "Most wellness is cash-pay — no insurance reimbursement in Jordan",
+    "Seasonal gym churn: January spike (resolutions), summer drop (heat)",
+    "Ministry of Health licensing delays can push launch back 2–4 months",
+    "One bad Instagram review can significantly damage reputation in tight Amman community"
+  ],
+  "redFlags": {
+    "gymChurnAbove_pct": 25,
+    "breakEvenAbove_months": 24,
+    "workingCapitalMinimum_JOD": 5000,
+    "note": "Wellness is high-trust. Quality inconsistency = death by word-of-mouth."
+  },
+  "jordanContext": {
+    "primaryAcquisitionChannel": "Word of mouth + Google Maps reviews + Instagram before/after content",
+    "womenOnlyNiche": "Women-only gyms and salons command premium pricing and strong loyalty in Amman",
+    "digitalHealthGrowing": "Tele-dentistry and telehealth startups emerging — digital-first wellness viable"
+  }
+}

@@ -1,0 +1,267 @@
+{
+  "_meta": {
+    "file": "retail_ecommerce.json",
+    "sector": "Retail & E-commerce",
+    "sectorKey": "retail_ecommerce",
+    "confidence": "HIGH",
+    "version": "1.0.0",
+    "lastUpdated": "2026-04-07",
+    "sources": [
+      "Statista eCommerce Jordan 2025",
+      "TrueProfit 5000+ stores 2026",
+      "Ministry of ICT Jordan 2024",
+      "GEM Jordan 2024/2025"
+    ]
+  },
+  "subSectors": [
+    "Instagram / Social Store (inventory-based)",
+    "Dropshipping",
+    "Physical Boutique",
+    "Marketplace Reseller (OpenSooq, Noon)",
+    "Handmade / Craft Products"
+  ],
+  "examples_Amman": [
+    "Instagram clothing store",
+    "Dropshipped home décor",
+    "Online beauty shop",
+    "Handmade leather goods",
+    "Physical boutique Sweifieh"
+  ],
+  "marketContext": {
+    "onlineShopper_pct": 36,
+    "under30_population_pct": 70,
+    "creditCardPenetration_pct": 25,
+    "dominantChannels": [
+      "Instagram",
+      "OpenSooq",
+      "Noon.com",
+      "Facebook Marketplace"
+    ],
+    "eTransactionsLaw": "2001 — primary e-commerce legislation",
+    "codRisk": "Budget 10–15% of COD orders for refusal/returns — build into forecasts",
+    "competitors": [
+      "Jadopado",
+      "MarkaVIP",
+      "CashBasha",
+      "Wakilni",
+      "Noon.com",
+      "OpenSooq"
+    ]
+  },
+  "startupCost_JOD": {
+    "overall": {
+      "low": 1500,
+      "high": 25000,
+      "typical": 6000,
+      "confidence": "HIGH"
+    },
+    "byModel": {
+      "dropshipping": {
+        "low": 1500,
+        "high": 3000,
+        "typical": 2000,
+        "note": "Shopify + domain + initial ads. Zero inventory."
+      },
+      "instagram_inventory": {
+        "low": 3000,
+        "high": 8000,
+        "typical": 5000,
+        "note": "Initial inventory + website/Instagram setup."
+      },
+      "marketplace_reseller": {
+        "low": 2000,
+        "high": 5000,
+        "typical": 3000,
+        "note": "Inventory + photo studio. Platform listing free."
+      },
+      "physical_boutique": {
+        "low": 12000,
+        "high": 25000,
+        "typical": 16000,
+        "note": "Rent deposit + buildout + POS + initial inventory."
+      }
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": {
+      "low": 150,
+      "high": 2000,
+      "typical": 800,
+      "confidence": "MEDIUM"
+    },
+    "byModel": {
+      "dropshipping": {
+        "platform": 5,
+        "domain": 2,
+        "ads": 100,
+        "other": 50,
+        "total_range": "150–200"
+      },
+      "instagram_inventory": {
+        "marketing": 200,
+        "shipping_labels": 100,
+        "other": 50,
+        "total_range": "300–400"
+      },
+      "physical_boutique": {
+        "rent": 800,
+        "utilities": 80,
+        "partTimeStaff": 300,
+        "marketing": 100,
+        "other": 100,
+        "total_range": "1200–1500"
+      }
+    }
+  },
+  "margins": {
+    "grossMargin_pct": {
+      "low": 30,
+      "high": 60,
+      "typical": 40,
+      "confidence": "HIGH"
+    },
+    "netMargin_pct": {
+      "low": 8,
+      "high": 22,
+      "typical": 12,
+      "confidence": "MEDIUM"
+    },
+    "byCategory": {
+      "clothing": {
+        "low": 35,
+        "high": 60,
+        "typical": 48
+      },
+      "beauty_personalCare": {
+        "low": 50,
+        "high": 70,
+        "typical": 60
+      },
+      "homeGoods": {
+        "low": 30,
+        "high": 50,
+        "typical": 40
+      },
+      "handmade_craft": {
+        "low": 55,
+        "high": 75,
+        "typical": 65,
+        "note": "High perceived value in Amman market."
+      },
+      "electronics": {
+        "low": 15,
+        "high": 30,
+        "typical": 22,
+        "note": "Commodity pricing — very competitive."
+      },
+      "dropshipping": {
+        "low": 15,
+        "high": 25,
+        "typical": 20,
+        "note": "Supplier takes majority margin."
+      }
+    },
+    "source": "TrueProfit analysis of 5,000+ stores Jan 2025–Jan 2026"
+  },
+  "averageOrderValue_JOD": {
+    "clothing": {
+      "low": 15,
+      "high": 80,
+      "typical": 40
+    },
+    "homeGoods": {
+      "low": 20,
+      "high": 120,
+      "typical": 55
+    },
+    "beauty": {
+      "low": 10,
+      "high": 60,
+      "typical": 30
+    },
+    "electronics": {
+      "low": 50,
+      "high": 400,
+      "typical": 150
+    },
+    "handmadeCraft": {
+      "low": 25,
+      "high": 150,
+      "typical": 70
+    },
+    "confidence": "MEDIUM"
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": {
+      "low": 1,
+      "high": 5,
+      "typical": 3
+    },
+    "instagramOrganic": {
+      "low": 3,
+      "high": 12,
+      "typical": 7
+    },
+    "instagramPaidAds": {
+      "low": 10,
+      "high": 40,
+      "typical": 22
+    },
+    "googleAds": {
+      "low": 15,
+      "high": 50,
+      "typical": 30
+    },
+    "marketplace": {
+      "low": 15,
+      "high": 40,
+      "typical": 25,
+      "note": "Noon/OpenSooq — 5–15% commission."
+    },
+    "confidence": "MEDIUM"
+  },
+  "monthlyChurnRate_pct": {
+    "low": 15,
+    "high": 45,
+    "typical": 30,
+    "confidence": "LOW",
+    "byCategory": {
+      "fashion_decor": "35–45% (one-time purchase)",
+      "beauty_supplements": "10–20% (replenishable)"
+    }
+  },
+  "breakEven_months": {
+    "overall": {
+      "low": 2,
+      "high": 9,
+      "typical": 5
+    },
+    "byModel": {
+      "dropshipping": "2–4 months",
+      "instagram_inventory": "4–7 months",
+      "physical_boutique": "8–12 months"
+    },
+    "confidence": "MEDIUM"
+  },
+  "redFlags": {
+    "grossMarginWarning_pct": 25,
+    "grossMarginDanger_pct": 15,
+    "netMarginDanger_pct": 5,
+    "ltvCacMinimum": 3,
+    "dropshippingWarning": "If gross margin <20% AND CAC >15 JOD — unprofitable model. Reprice or exit.",
+    "codRefusalBuffer": "Reserve 10–15% of COD revenue for refused deliveries."
+  },
+  "jordanContext": {
+    "primaryDiscoveryChannel": "Instagram — 80%+ of online discovery in Amman via social media",
+    "cartAbandonmentRisk": "40%+ abandon if checkout > 3 steps — keep it simple",
+    "logisticsPartners": [
+      "Aramex Jordan",
+      "SMSA",
+      "J&T Express"
+    ],
+    "deliveryCost_JOD": {
+      "local_Amman": "1.5–3",
+      "nationwide": "3–5"
+    }
+  }
+}
