@@ -1,0 +1,515 @@
+/**
+ * Mashroo3i Design System — Global CSS Custom Properties
+ * Import this file once in main.jsx:
+ *   import './design-system/GlobalStyles.css'
+ *
+ * All tokens are exposed as --ds-* CSS variables.
+ * Dark mode is toggled via the `.dark` class on <html> or <body>
+ * (matching Tailwind's `darkMode: 'class'` config).
+ * RTL is handled via [dir="rtl"] selector overrides where needed.
+ */
+
+/* ── Fonts ────────────────────────────────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+/* ════════════════════════════════════════════════════════════════════════════
+   LIGHT MODE (default)
+   ════════════════════════════════════════════════════════════════════════════ */
+:root {
+  /* ── Brand ─────────────────────────────────────────────────────────────── */
+  --ds-brand-50:  #edfaf5;
+  --ds-brand-100: #d2f4e8;
+  --ds-brand-200: #a8e9d1;
+  --ds-brand-300: #70d8b5;
+  --ds-brand-400: #35bf93;
+  --ds-brand-500: #1D9E75;   /* ← primary brand */
+  --ds-brand-600: #168564;
+  --ds-brand-700: #126d53;
+  --ds-brand-800: #105742;
+  --ds-brand-900: #0e4736;
+  --ds-brand-950: #071f18;
+
+  /* ── Semantic ───────────────────────────────────────────────────────────── */
+  --ds-success-light: #dcfce7;
+  --ds-success:       #16a34a;
+  --ds-success-dark:  #14532d;
+  --ds-success-text:  #15803d;
+
+  --ds-warning-light: #fef9c3;
+  --ds-warning:       #ca8a04;
+  --ds-warning-dark:  #713f12;
+  --ds-warning-text:  #a16207;
+
+  --ds-danger-light:  #fee2e2;
+  --ds-danger:        #dc2626;
+  --ds-danger-dark:   #7f1d1d;
+  --ds-danger-text:   #b91c1c;
+
+  --ds-info-light:    #dbeafe;
+  --ds-info:          #2563eb;
+  --ds-info-dark:     #1e3a8a;
+  --ds-info-text:     #1d4ed8;
+
+  /* ── Neutral ────────────────────────────────────────────────────────────── */
+  --ds-neutral-0:   #ffffff;
+  --ds-neutral-50:  #f9fafb;
+  --ds-neutral-100: #f3f4f6;
+  --ds-neutral-200: #e5e7eb;
+  --ds-neutral-300: #d1d5db;
+  --ds-neutral-400: #9ca3af;
+  --ds-neutral-500: #6b7280;
+  --ds-neutral-600: #4b5563;
+  --ds-neutral-700: #374151;
+  --ds-neutral-800: #1f2937;
+  --ds-neutral-900: #111827;
+  --ds-neutral-950: #030712;
+
+  /* ── Semantic surface / text aliases ───────────────────────────────────── */
+  --ds-bg:            var(--ds-neutral-50);
+  --ds-bg-elevated:   var(--ds-neutral-0);
+  --ds-bg-sunken:     var(--ds-neutral-100);
+  --ds-surface:       var(--ds-neutral-0);
+  --ds-surface-hover: var(--ds-neutral-50);
+
+  --ds-border:        var(--ds-neutral-200);
+  --ds-border-strong: var(--ds-neutral-300);
+  --ds-border-subtle: var(--ds-neutral-100);
+
+  --ds-text:          var(--ds-neutral-900);
+  --ds-text-secondary:var(--ds-neutral-600);
+  --ds-text-muted:    var(--ds-neutral-500);
+  --ds-text-disabled: var(--ds-neutral-400);
+  --ds-text-inverse:  var(--ds-neutral-0);
+  --ds-text-brand:    var(--ds-brand-600);
+
+  /* ── Sidebar ────────────────────────────────────────────────────────────── */
+  --ds-sidebar-bg:         var(--ds-neutral-0);
+  --ds-sidebar-border:     var(--ds-neutral-200);
+  --ds-sidebar-text:       var(--ds-neutral-600);
+  --ds-sidebar-text-hover: var(--ds-neutral-900);
+  --ds-sidebar-active-bg:  var(--ds-brand-50);
+  --ds-sidebar-active-text:var(--ds-brand-700);
+  --ds-sidebar-active-bar: var(--ds-brand-500);
+  --ds-sidebar-width:      260px;
+
+  /* ── Typography ─────────────────────────────────────────────────────────── */
+  --ds-font-sans:   'Inter', 'Segoe UI', system-ui, sans-serif;
+  --ds-font-arabic: 'Cairo', 'Noto Sans Arabic', 'Segoe UI', system-ui, sans-serif;
+  --ds-font-mono:   'JetBrains Mono', 'Fira Code', monospace;
+
+  --ds-text-2xs:  0.6875rem;
+  --ds-text-xs:   0.75rem;
+  --ds-text-sm:   0.8125rem;
+  --ds-text-base: 0.9375rem;
+  --ds-text-md:   1rem;
+  --ds-text-lg:   1.125rem;
+  --ds-text-xl:   1.25rem;
+  --ds-text-2xl:  1.5rem;
+  --ds-text-3xl:  1.875rem;
+  --ds-text-4xl:  2.25rem;
+  --ds-text-5xl:  3rem;
+
+  /* ── Border Radius ──────────────────────────────────────────────────────── */
+  --ds-radius-sm:  0.25rem;
+  --ds-radius:     0.375rem;
+  --ds-radius-md:  0.5rem;
+  --ds-radius-lg:  0.75rem;
+  --ds-radius-xl:  1rem;
+  --ds-radius-2xl: 1.25rem;
+  --ds-radius-3xl: 1.5rem;
+  --ds-radius-full:9999px;
+
+  /* ── Shadows ────────────────────────────────────────────────────────────── */
+  --ds-shadow-xs:    0 1px 2px 0 rgba(0,0,0,0.05);
+  --ds-shadow-sm:    0 1px 3px 0 rgba(0,0,0,0.08), 0 1px 2px -1px rgba(0,0,0,0.06);
+  --ds-shadow-md:    0 4px 6px -1px rgba(0,0,0,0.07), 0 2px 4px -2px rgba(0,0,0,0.05);
+  --ds-shadow-lg:    0 10px 15px -3px rgba(0,0,0,0.08), 0 4px 6px -4px rgba(0,0,0,0.05);
+  --ds-shadow-xl:    0 20px 25px -5px rgba(0,0,0,0.09), 0 8px 10px -6px rgba(0,0,0,0.05);
+  --ds-shadow-2xl:   0 25px 50px -12px rgba(0,0,0,0.18);
+  --ds-shadow-inner: inset 0 2px 4px 0 rgba(0,0,0,0.05);
+  --ds-shadow-focus: 0 0 0 3px rgba(29,158,117,0.35);
+  --ds-shadow-glow:  0 0 0 3px rgba(29,158,117,0.25), 0 4px 16px rgba(29,158,117,0.20);
+
+  /* ── Spacing (4px base) ─────────────────────────────────────────────────── */
+  --ds-space-1:  0.25rem;
+  --ds-space-2:  0.5rem;
+  --ds-space-3:  0.75rem;
+  --ds-space-4:  1rem;
+  --ds-space-5:  1.25rem;
+  --ds-space-6:  1.5rem;
+  --ds-space-8:  2rem;
+  --ds-space-10: 2.5rem;
+  --ds-space-12: 3rem;
+  --ds-space-16: 4rem;
+  --ds-space-20: 5rem;
+  --ds-space-24: 6rem;
+
+  /* ── Z-index ────────────────────────────────────────────────────────────── */
+  --ds-z-base:     0;
+  --ds-z-raised:   1;
+  --ds-z-dropdown: 10;
+  --ds-z-sticky:   20;
+  --ds-z-overlay:  30;
+  --ds-z-modal:    40;
+  --ds-z-popover:  45;
+  --ds-z-toast:    50;
+  --ds-z-max:      9999;
+
+  /* ── Transitions ────────────────────────────────────────────────────────── */
+  --ds-transition-fast:   all 0.15s ease;
+  --ds-transition-base:   all 0.2s ease;
+  --ds-transition-slow:   all 0.35s ease;
+  --ds-transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --ds-transition-spring: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   DARK MODE
+   ════════════════════════════════════════════════════════════════════════════ */
+.dark {
+  --ds-bg:            #111827;   /* gray-900 */
+  --ds-bg-elevated:   #1f2937;   /* gray-800 */
+  --ds-bg-sunken:     #0d1117;
+  --ds-surface:       #1f2937;
+  --ds-surface-hover: #263347;
+
+  --ds-border:        #374151;   /* gray-700 */
+  --ds-border-strong: #4b5563;
+  --ds-border-subtle: #1f2937;
+
+  --ds-text:          #f9fafb;   /* gray-50 */
+  --ds-text-secondary:#d1d5db;   /* gray-300 */
+  --ds-text-muted:    #9ca3af;   /* gray-400 */
+  --ds-text-disabled: #6b7280;
+  --ds-text-inverse:  #111827;
+  --ds-text-brand:    var(--ds-brand-300);
+
+  --ds-sidebar-bg:          #1f2937;
+  --ds-sidebar-border:      #374151;
+  --ds-sidebar-text:        #9ca3af;
+  --ds-sidebar-text-hover:  #f9fafb;
+  --ds-sidebar-active-bg:   rgba(29, 158, 117, 0.15);
+  --ds-sidebar-active-text: var(--ds-brand-300);
+  --ds-sidebar-active-bar:  var(--ds-brand-400);
+
+  --ds-shadow-xs:    0 1px 2px 0 rgba(0,0,0,0.25);
+  --ds-shadow-sm:    0 1px 3px 0 rgba(0,0,0,0.3), 0 1px 2px -1px rgba(0,0,0,0.2);
+  --ds-shadow-md:    0 4px 6px -1px rgba(0,0,0,0.3), 0 2px 4px -2px rgba(0,0,0,0.2);
+  --ds-shadow-lg:    0 10px 15px -3px rgba(0,0,0,0.35), 0 4px 6px -4px rgba(0,0,0,0.2);
+  --ds-shadow-xl:    0 20px 25px -5px rgba(0,0,0,0.4), 0 8px 10px -6px rgba(0,0,0,0.25);
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY DEFAULTS
+   ════════════════════════════════════════════════════════════════════════════ */
+.ds-root,
+[data-ds] {
+  font-family: var(--ds-font-sans);
+  font-size: var(--ds-text-base);
+  line-height: 1.5;
+  color: var(--ds-text);
+  background-color: var(--ds-bg);
+}
+
+[dir="rtl"] .ds-root,
+[dir="rtl"] [data-ds],
+[lang="ar"] .ds-root,
+[lang="ar"] [data-ds] {
+  font-family: var(--ds-font-arabic);
+  line-height: 1.9;
+}
+
+/* ════════════════════════════════════════════════════════════════════════════
+   COMPONENT BASE CLASSES
+   ════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Button ─────────────────────────────────────────────────────────────────*/
+.ds-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  border-radius: var(--ds-radius-lg);
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: var(--ds-transition-smooth);
+  outline: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.ds-btn:focus-visible {
+  box-shadow: var(--ds-shadow-focus);
+}
+.ds-btn:disabled,
+.ds-btn[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Sizes */
+.ds-btn-sm  { padding: 0.375rem 0.875rem; font-size: var(--ds-text-xs); }
+.ds-btn-md  { padding: 0.5rem 1.25rem;    font-size: var(--ds-text-sm); }
+.ds-btn-lg  { padding: 0.75rem 1.75rem;   font-size: var(--ds-text-base); }
+
+/* Variants */
+.ds-btn-primary {
+  background: var(--ds-brand-500);
+  color: #fff;
+  border-color: var(--ds-brand-500);
+  box-shadow: var(--ds-shadow-sm);
+}
+.ds-btn-primary:hover:not(:disabled) {
+  background: var(--ds-brand-600);
+  border-color: var(--ds-brand-600);
+  box-shadow: var(--ds-shadow-glow);
+  transform: translateY(-1px);
+}
+.ds-btn-primary:active { transform: translateY(0); }
+
+.ds-btn-secondary {
+  background: var(--ds-surface);
+  color: var(--ds-text);
+  border-color: var(--ds-border);
+  box-shadow: var(--ds-shadow-xs);
+}
+.ds-btn-secondary:hover:not(:disabled) {
+  background: var(--ds-surface-hover);
+  border-color: var(--ds-border-strong);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.ds-btn-ghost {
+  background: transparent;
+  color: var(--ds-text-secondary);
+  border-color: transparent;
+}
+.ds-btn-ghost:hover:not(:disabled) {
+  background: var(--ds-surface-hover);
+  color: var(--ds-text);
+}
+
+.ds-btn-danger {
+  background: var(--ds-danger);
+  color: #fff;
+  border-color: var(--ds-danger);
+  box-shadow: var(--ds-shadow-sm);
+}
+.ds-btn-danger:hover:not(:disabled) {
+  background: #b91c1c;
+  border-color: #b91c1c;
+  box-shadow: 0 4px 16px rgba(220,38,38,0.3);
+  transform: translateY(-1px);
+}
+
+/* ── Card ───────────────────────────────────────────────────────────────────*/
+.ds-card {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-2xl);
+  box-shadow: var(--ds-shadow-sm);
+  transition: var(--ds-transition-smooth);
+  overflow: hidden;
+}
+.ds-card-interactive:hover {
+  box-shadow: var(--ds-shadow-lg);
+  transform: translateY(-2px);
+  border-color: var(--ds-border-strong);
+}
+.ds-card-header {
+  padding: var(--ds-space-5) var(--ds-space-6);
+  border-block-end: 1px solid var(--ds-border-subtle);
+}
+.ds-card-body   { padding: var(--ds-space-6); }
+.ds-card-footer {
+  padding: var(--ds-space-4) var(--ds-space-6);
+  border-block-start: 1px solid var(--ds-border-subtle);
+  background: var(--ds-bg-sunken);
+}
+
+/* ── Badge ──────────────────────────────────────────────────────────────────*/
+.ds-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-weight: 500;
+  border-radius: var(--ds-radius-full);
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+.ds-badge-sm  { padding: 0.15rem 0.5rem;  font-size: var(--ds-text-xs); }
+.ds-badge-md  { padding: 0.25rem 0.75rem; font-size: var(--ds-text-xs); }
+.ds-badge-lg  { padding: 0.375rem 1rem;   font-size: var(--ds-text-sm); }
+
+.ds-badge-brand   { background: var(--ds-brand-50);   color: var(--ds-brand-700);   border-color: var(--ds-brand-200); }
+.ds-badge-success { background: var(--ds-success-light); color: var(--ds-success-text); border-color: #bbf7d0; }
+.ds-badge-warning { background: var(--ds-warning-light); color: var(--ds-warning-text); border-color: #fde047; }
+.ds-badge-danger  { background: var(--ds-danger-light);  color: var(--ds-danger-text);  border-color: #fecaca; }
+.ds-badge-info    { background: var(--ds-info-light);    color: var(--ds-info-text);    border-color: #bfdbfe; }
+.ds-badge-neutral { background: var(--ds-neutral-100);   color: var(--ds-neutral-600);  border-color: var(--ds-neutral-200); }
+
+.dark .ds-badge-brand   { background: rgba(29,158,117,0.15); color: var(--ds-brand-300); border-color: rgba(29,158,117,0.25); }
+.dark .ds-badge-success { background: rgba(22,163,74,0.15);  color: #86efac;             border-color: rgba(22,163,74,0.25); }
+.dark .ds-badge-warning { background: rgba(202,138,4,0.15);  color: #fde047;             border-color: rgba(202,138,4,0.25); }
+.dark .ds-badge-danger  { background: rgba(220,38,38,0.15);  color: #fca5a5;             border-color: rgba(220,38,38,0.25); }
+.dark .ds-badge-info    { background: rgba(37,99,235,0.15);  color: #93c5fd;             border-color: rgba(37,99,235,0.25); }
+.dark .ds-badge-neutral { background: rgba(75,85,99,0.3);    color: #d1d5db;             border-color: #374151; }
+
+/* ── Tooltip ────────────────────────────────────────────────────────────────*/
+.ds-tooltip-anchor {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  cursor: help;
+  border-block-end: 1px dashed var(--ds-neutral-400);
+}
+.ds-tooltip-bubble {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: var(--ds-z-popover);
+  min-width: 13rem;
+  max-width: 20rem;
+  padding: 0.625rem 0.875rem;
+  font-size: var(--ds-text-xs);
+  line-height: 1.5;
+  background: var(--ds-neutral-900);
+  color: #f9fafb;
+  border-radius: var(--ds-radius-lg);
+  box-shadow: var(--ds-shadow-xl);
+  pointer-events: none;
+}
+[dir="rtl"] .ds-tooltip-bubble {
+  transform: translateX(50%);
+}
+.ds-tooltip-bubble::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-block-start-color: var(--ds-neutral-900);
+}
+.dark .ds-tooltip-bubble {
+  background: var(--ds-neutral-700);
+}
+.dark .ds-tooltip-bubble::after {
+  border-block-start-color: var(--ds-neutral-700);
+}
+
+/* ── Sidebar nav item ───────────────────────────────────────────────────────*/
+.ds-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.875rem;
+  border-radius: var(--ds-radius-lg);
+  font-size: var(--ds-text-sm);
+  font-weight: 500;
+  color: var(--ds-sidebar-text);
+  text-decoration: none;
+  transition: var(--ds-transition-fast);
+  position: relative;
+}
+.ds-nav-item:hover {
+  background: var(--ds-surface-hover);
+  color: var(--ds-sidebar-text-hover);
+}
+.ds-nav-item.active {
+  background: var(--ds-sidebar-active-bg);
+  color: var(--ds-sidebar-active-text);
+}
+.ds-nav-item.active::before {
+  content: '';
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: -1px;
+  width: 3px;
+  background: var(--ds-sidebar-active-bar);
+  border-start-end-radius: 2px;
+  border-end-end-radius: 2px;
+}
+
+/* ── Progress Steps ─────────────────────────────────────────────────────────*/
+.ds-step-connector {
+  flex: 1;
+  height: 2px;
+  background: var(--ds-border);
+  transition: background 0.3s ease;
+}
+.ds-step-connector.completed {
+  background: var(--ds-brand-400);
+}
+
+/* ── Section Header ─────────────────────────────────────────────────────────*/
+.ds-section-title {
+  font-size: var(--ds-text-2xl);
+  font-weight: 700;
+  color: var(--ds-text);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+}
+.ds-section-subtitle {
+  font-size: var(--ds-text-base);
+  color: var(--ds-text-muted);
+  line-height: 1.6;
+  margin-block-start: 0.375rem;
+}
+.ds-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  flex-wrap: wrap;
+  font-size: var(--ds-text-xs);
+  color: var(--ds-text-muted);
+  margin-block-end: 0.5rem;
+}
+.ds-breadcrumb a {
+  color: var(--ds-text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+.ds-breadcrumb a:hover { color: var(--ds-text-brand); }
+
+/* ── Metric Card ────────────────────────────────────────────────────────────*/
+.ds-metric-value {
+  font-size: var(--ds-text-3xl);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--ds-text);
+  font-variant-numeric: tabular-nums;
+}
+.ds-metric-trend-up   { color: var(--ds-success-text); }
+.ds-metric-trend-down { color: var(--ds-danger-text);  }
+.ds-metric-trend-flat { color: var(--ds-text-muted);   }
+
+/* ── RTL logical overrides ──────────────────────────────────────────────────*/
+/* All margin/padding/border directional properties already use logical props  */
+/* (margin-inline-start, padding-block, border-block-end, inset-inline-start). */
+/* Below: flip icon-transforms for RTL where needed. */
+[dir="rtl"] .ds-icon-chevron-right,
+[dir="rtl"] .ds-icon-arrow-right {
+  transform: scaleX(-1);
+}
+
+/* ── Utility helpers ────────────────────────────────────────────────────────*/
+.ds-divider {
+  height: 1px;
+  background: var(--ds-border);
+  border: none;
+  margin-block: var(--ds-space-4);
+}
+.ds-surface {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-xl);
+}
+.ds-text-brand    { color: var(--ds-text-brand); }
+.ds-text-muted    { color: var(--ds-text-muted); }
+.ds-text-secondary{ color: var(--ds-text-secondary); }
