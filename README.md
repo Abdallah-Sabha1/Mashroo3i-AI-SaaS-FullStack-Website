@@ -28,53 +28,57 @@ It's not a chatbot. It's a structured evaluation workflow with a credit-based bu
 
 ### Landing Page
 
-![Landing Page](https://private-user-images.githubusercontent.com/245048736/597308697-fa8acfa9-6d4a-468f-b652-b5cad8935640.png)
+![Hero](screenshots/landing-hero.png)
 
-### Register & Login
+![Problem](screenshots/landing-problem.png)
 
-![Register Page](https://private-user-images.githubusercontent.com/245048736/597309028-c5240436-e952-4fbc-9364-f2aa8f45ca24.png)
+![How It Works](screenshots/landing-how-it-works.png)
 
-![Login Page](https://private-user-images.githubusercontent.com/245048736/597309053-7389d4c1-7e41-4d85-8960-665986c1d9cc.png)
+![Principles](screenshots/landing-principles.png)
 
-### Dashboard
+![CTA](screenshots/landing-cta.png)
 
-Your hub for all submitted ideas and their evaluation status.
+![Footer](screenshots/landing-footer.png)
 
-![Dashboard](https://private-user-images.githubusercontent.com/245048736/597309068-2bdacf07-2fd1-4c43-a67c-a127676037f4.png)
+---
 
-### Submit an Idea
+### AI Evaluation Report
 
-Describe your business — sector, target audience, USP, budget — and kick off the evaluation.
+Submit your idea and get back a scored, structured report across four tabs — AI Evaluation, SWOT & Risk, Market, and Financial Projections.
 
-![Submit Idea](https://private-user-images.githubusercontent.com/245048736/597309108-17c64a16-6675-4355-ae37-46d0b2068018.png)
+**Scoring & Recommendations**
 
-### Evaluation Report
+![Evaluation Score](screenshots/evaluation-score.jpeg)
 
-A full AI-generated report: overall score, market score, SWOT analysis, competitor breakdown, and actionable recommendations.
+**SWOT & Risk Analysis**
 
-![Evaluation Report](https://private-user-images.githubusercontent.com/245048736/597309128-8adb2241-815e-4cc7-aefa-edfccd0e4872.png)
+![SWOT Analysis](screenshots/evaluation-swot.jpeg)
+
+**Market Analysis**
+
+![Market Analysis](screenshots/evaluation-market.jpeg)
+
+---
 
 ### Financial Projections
 
-An interactive 12-month financial model. Adjust your inputs and see revenue, costs, and break-even update in real time.
+An interactive 3-step financial model. Dial in your costs, revenue assumptions, and growth rate — then see your full Year 1 P&L, break-even month, and ROI.
 
-![Financial Projections](https://private-user-images.githubusercontent.com/245048736/597308707-13251839-6437-492c-bfb3-87bb9d754711.png)
+**Step 1 — Investment Setup**
 
-![Financial Model Detail](https://private-user-images.githubusercontent.com/245048736/597308713-926e5ca5-1db4-4221-ae9b-ec4f0ebd3feb.png)
+![Investment Setup](screenshots/financial-investment.jpeg)
 
-### Buy Credits
+**Step 2 — Revenue Model**
 
-Pay per evaluation — no flat subscription. Choose the pack that fits your needs.
+![Revenue Model](screenshots/financial-revenue.jpeg)
 
-![Buy Credits](https://private-user-images.githubusercontent.com/245048736/597308720-f42f39ea-0089-42fd-8186-bd1f1e99a846.png)
+**Step 3 — Results**
 
-### Pricing
+![Financial Results](screenshots/financial-results.jpeg)
 
-![Pricing Page](https://private-user-images.githubusercontent.com/245048736/597308726-cd13d66f-4b73-4fbb-939f-0146d16fd3b8.png)
+**AI Insights**
 
-### Profile
-
-![Profile Page](https://private-user-images.githubusercontent.com/245048736/597308736-3d02e116-9123-480d-a742-2c2ecde80f1e.png)
+![AI Insights](screenshots/financial-insights.jpeg)
 
 ---
 
