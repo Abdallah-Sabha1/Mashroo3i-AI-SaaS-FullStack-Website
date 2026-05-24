@@ -1,4 +1,4 @@
-<div align="center">
+<img width="935" height="824" alt="image" src="https://github.com/user-attachments/assets/fa8acfa9-6d4a-468f-b652-b5cad8935640" /><div align="center">
 
 <img src="Frontend/public/logo1 green & black.svg" alt="Mashroo3i Logo" width="200"/>
 
@@ -25,8 +25,24 @@ It's not a chatbot. It's a structured evaluation workflow with a credit-based bu
 ---
 
 ## Screenshots
+<img width="1919" height="1079" alt="Screenshot 2026-05-24 142954" src="https://github.com/user-attachments/assets/c5240436-e952-4fbc-9364-f2aa8f45ca24" />
+<img width="1878" height="856" alt="Screenshot 2026-05-24 143002" src="https://github.com/user-attachments/assets/7389d4c1-7e41-4d85-8960-665986c1d9cc" />
+<img width="1893" height="756" alt="Screenshot 2026-05-24 143007" src="https://github.com/user-attachments/assets/2bdacf07-2fd1-4c43-a67c-a127676037f4" />
+<img width="1888" height="958" alt="Screenshot 2026-05-24 143023" src="https://github.com/user-attachments/assets/17c64a16-6675-4355-ae37-46d0b2068018" />
+<img width="1881" height="585" alt="Screenshot 2026-05-24 143027" src="https://github.com/user-attachments/assets/8adb2241-815e-4cc7-aefa-edfccd0e4872" />
+<img width="935" height="824" alt="image" src="https://github.com/user-attachments/assets/13251839-6437-492c-bfb3-87bb9d754711" />
+<img width="671" height="776" alt="image" src="https://github.com/user-attachments/assets/926e5ca5-1db4-4221-ae9b-ec4f0ebd3feb" />
+<img width="648" height="813" alt="image" src="https://github.com/user-attachments/assets/f42f39ea-0089-42fd-8186-bd1f1e99a846" />
+<img width="659" height="624" alt="image" src="https://github.com/user-attachments/assets/cd13d66f-4b73-4fbb-939f-0146d16fd3b8" />
+<img width="683" height="675" alt="image" src="https://github.com/user-attachments/assets/3d02e116-9123-480d-a742-2c2ecde80f1e" />
+<img width="683" height="740" alt="image" src="https://github.com/user-attachments/assets/84789feb-266a-41fe-96ba-ef5ccfb3b425" />
+<img width="616" height="416" alt="image" src="https://github.com/user-attachments/assets/e5fd4e63-40d2-4790-9368-297568e6a0be" />
 
-> Coming soon.
+
+
+
+
+
 
 ---
 
