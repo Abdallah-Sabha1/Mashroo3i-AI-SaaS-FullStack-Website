@@ -1,0 +1,6 @@
+@Mashroo3i_HostAddress = http://localhost:5057
+
+GET {{Mashroo3i_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

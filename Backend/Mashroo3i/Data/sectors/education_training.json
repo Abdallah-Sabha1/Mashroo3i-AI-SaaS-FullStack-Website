@@ -1,0 +1,209 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Ministry of Education Jordan 2024", "VTC annual report 2024", "GEM Jordan 2024", "Amman tutoring market research"]
+  },
+  "subSectors": [
+    "Private Tutoring (K-12)",
+    "Tawjihi Exam Prep Center",
+    "Online Courses / eLearning",
+    "Vocational / Skills Training",
+    "Corporate Training (B2B)",
+    "Language Schools",
+    "Test Prep (IELTS, Tawjihi)",
+    "Bootcamps / Coding Schools"
+  ],
+  "marketSize_JOD": {
+    "privateTutoringAmman": "35-50M",
+    "tawjihiPrepAmman": "12-20M",
+    "corporateTrainingJordan": "15-25M",
+    "edtechDigitalJordan": "20-35M",
+    "totalEducationTraining_jordan": "80-120M",
+    "growthTrend": "GROWING",
+    "note": "70% of population under 30, 40%+ youth unemployment drives skills demand. VTC serves 20K/year publicly — private gap is large.",
+    "aiPromptGuidance": "For Tawjihi prep centers use tawjihiPrepAmman. For general K-12 tutoring use privateTutoringAmman. For online learning use edtechDigitalJordan. For corporate training use corporateTrainingJordan."
+  },
+  "knownCompetitors": {
+    "online_edtech": [
+      {
+        "name": "Abwaab",
+        "type": "Online learning platform for secondary students",
+        "locations": "Jordan, Egypt, Saudi Arabia",
+        "targetSegment": "Secondary school students K-12 including Tawjihi",
+        "priceRange": "15-50 JOD/month",
+        "mainStrength": "Investor-backed, expert tutors, self-paced learning, strong brand recognition",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Private Tutoring (K-12)", "Tawjihi Exam Prep Center", "Online Courses / eLearning"]
+      },
+      {
+        "name": "Edraak",
+        "type": "Arabic MOOC platform (Queen Rania Foundation)",
+        "locations": "Jordan, pan-Arab",
+        "targetSegment": "University students and adults, Arabic learners",
+        "priceRange": "Free to 30 JOD/course",
+        "mainStrength": "Free/subsidized courses, Queen Rania brand, massive Arabic content library",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Online Courses / eLearning", "Vocational / Skills Training"]
+      },
+      {
+        "name": "Ustazi",
+        "type": "Tutor marketplace app",
+        "locations": "Amman",
+        "targetSegment": "Students seeking private tutors K-12",
+        "priceRange": "8-25 JOD/hour per session",
+        "mainStrength": "On-demand booking, rating system, lower cost than physical centers",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Private Tutoring (K-12)", "Tawjihi Exam Prep Center"]
+      }
+    ],
+    "physical_centers": [
+      {
+        "name": "Manara Educational Center",
+        "type": "Tawjihi and K-12 tutoring center",
+        "locations": "Multiple Amman branches",
+        "targetSegment": "Tawjihi students and secondary school pupils",
+        "priceRange": "50-100 JOD/month per subject",
+        "mainStrength": "Established track record with Tawjihi pass rates, parent word-of-mouth",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Tawjihi Exam Prep Center", "Private Tutoring (K-12)"]
+      },
+      {
+        "name": "A+ Private Tutoring",
+        "type": "IB and IGCSE tutoring center",
+        "locations": "Amman",
+        "targetSegment": "International school students",
+        "priceRange": "60-150 JOD/month",
+        "mainStrength": "Specialized curriculum, established reputation among expat families",
+        "threat": "LOW",
+        "relevantSubSectors": ["Private Tutoring (K-12)"]
+      },
+      {
+        "name": "VTC (Vocational Training Corporation)",
+        "type": "Government vocational training",
+        "locations": "34 centers Jordan-wide",
+        "targetSegment": "Youth seeking vocational skills",
+        "priceRange": "Free to 50 JOD/course (subsidized)",
+        "mainStrength": "Free/subsidized, government-backed, 20,000 learners/year",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Vocational / Skills Training", "Bootcamps / Coding Schools"]
+      }
+    ],
+    "corporate_training": [
+      {
+        "name": "Salalem",
+        "type": "Corporate training and LMS platform",
+        "locations": "Amman",
+        "targetSegment": "Organizations, HR departments",
+        "priceRange": "500-3000 JOD/month enterprise license",
+        "mainStrength": "B2B focus, employee training management, established client base",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Corporate Training (B2B)"]
+      }
+    ]
+  },
+  "marketContext": {
+    "youthUnder30_pct": 70,
+    "youthEntrepreneurship_pct_ofTEA": 60,
+    "tawjihiStudents_annual": 175000,
+    "publicCompetitors": {
+      "VTC": "34 centers, 20K learners/year",
+      "BAU": "16 community colleges",
+      "NET": "18 centers, 100+ programmes"
+    },
+    "marketGap": "Private digital skills, English, coding — high demand, underserved by public institutions.",
+    "insight": "60% of early-stage entrepreneurs aged 18-34. Young, underemployed, skills-hungry market. Tawjihi prep is recession-proof demand."
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 500, "high": 20000, "typical": 7000 },
+    "byModel": {
+      "online_solo_tutor": { "low": 500, "high": 2000, "typical": 1000 },
+      "online_course_platform": { "low": 2000, "high": 8000, "typical": 4000 },
+      "physical_training_center_1classroom": { "low": 5000, "high": 12000, "typical": 8000 },
+      "physical_training_center_3classrooms": { "low": 10000, "high": 22000, "typical": 15000 },
+      "corporate_training_b2b": { "low": 2000, "high": 6000, "typical": 3500 }
+    },
+    "legalNote": "Physical training centers must register with Ministry of Education. TVET governed by VTC Law (1985) + 2019 amendments. Registration can take 4-8 weeks."
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 150, "high": 4000, "typical": 1000 },
+    "byModel": {
+      "online_solo": { "platform": 20, "marketing": 100, "software": 30, "total_range": "150-250" },
+      "online_course": { "hosting": 50, "marketing": 300, "tools": 80, "total_range": "400-600" },
+      "physical_center_1classroom": {
+        "rent": 600,
+        "utilities": 60,
+        "instructor_1": 530,
+        "marketing": 100,
+        "other": 80,
+        "total_range": "1300-1500",
+        "note": "One classroom, one instructor. Suitable for starting small."
+      },
+      "physical_center_3classrooms": {
+        "rent": 900,
+        "utilities": 100,
+        "instructor_2": 1060,
+        "marketing": 150,
+        "other": 100,
+        "total_range": "2200-2800",
+        "note": "Three classrooms, two instructors. Scale-up model."
+      }
+    },
+    "staffCosts": {
+      "instructor_junior_total": { "monthly": 530, "note": "470 JOD salary + 60 JOD SSC" },
+      "instructor_experienced_total": { "monthly": 700, "note": "620 JOD salary + 80 JOD SSC" }
+    }
+  },
+  "margins": {
+    "onlineCourse": { "grossMargin_pct": { "low": 70, "high": 90, "typical": 80 } },
+    "liveTutoring": { "grossMargin_pct": { "low": 60, "high": 80, "typical": 70 } },
+    "physicalCenter": { "grossMargin_pct": { "low": 35, "high": 60, "typical": 48 } },
+    "corporateB2B": { "grossMargin_pct": { "low": 50, "high": 75, "typical": 62 } },
+    "netMargin_pct": { "low": 15, "high": 45, "typical": 25 }
+  },
+  "pricingBenchmarks_JOD": {
+    "privateTutoring_hourly": { "low": 8, "high": 30, "typical": 15 },
+    "tawjihiCenter_monthly_perSubject": { "low": 40, "high": 100, "typical": 65 },
+    "onlineCourse_oneTime": { "low": 20, "high": 200, "typical": 60 },
+    "bootcamp_total": { "low": 300, "high": 1500, "typical": 600 },
+    "monthlyMembership": { "low": 30, "high": 150, "typical": 60 },
+    "corporateTraining_perDay": { "low": 200, "high": 800, "typical": 400 }
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": { "low": 2, "high": 10, "typical": 5 },
+    "instagramOrganic": { "low": 5, "high": 20, "typical": 10 },
+    "paidAds": { "low": 15, "high": 50, "typical": 25 },
+    "schoolPartnerships": { "low": 5, "high": 20, "typical": 10 }
+  },
+  "churn": {
+    "ongoing_monthly_pct": { "low": 5, "high": 25, "typical": 12 },
+    "reEnrollmentRate_pct": { "low": 25, "high": 60, "typical": 40 },
+    "tawjihi_note": "Tawjihi centers lose all students in June-July after exams. Enrollment resets fully each September. Plan for 0 revenue June-August."
+  },
+  "breakEven_months": {
+    "online_solo": { "low": 1, "high": 3, "typical": 2 },
+    "physical_center_calendar": { "low": 5, "high": 12, "typical": 7 },
+    "physical_center_academic_year_note": "For seasonal businesses like Tawjihi centers, break-even should be measured in academic months (September-May = 9 months), not calendar months. 7 calendar months of break-even means the business may never cover summer fixed costs.",
+    "tawjihi_center_realistic": { "low": 6, "high": 15, "typical": 10, "note": "Measured in academic months active. Summer gap of 3 months adds ~4500-6000 JOD to effective break-even cost." }
+  },
+  "commonRisks": [
+    "Tawjihi centers earn nothing June-August — 3 months of fixed rent and salaries with zero revenue",
+    "Negative perception of vocational training vs university degrees",
+    "Seasonal lumpiness: back-to-school spike September, Tawjihi season April-June, summer crash June-August",
+    "Government VTC offers free/subsidized competition",
+    "Teacher poaching: competing centers and private clients target your best teachers during peak Tawjihi season — sign 12-month contracts before September",
+    "Low Tawjihi seasons create enrollment crashes — re-enrollment rate below 25% is a red flag"
+  ],
+  "redFlags": {
+    "reEnrollmentBelow_pct": 25,
+    "grossMarginBelow_pct": 40,
+    "breakEvenAbove_months": 15,
+    "summerGapReserve_JOD": "Must hold 3 months of fixed costs as reserve before June — minimum 4000-8000 JOD depending on model"
+  },
+  "jordanContext": {
+    "backToSchool": "August-September: 1.5x enrollment spike",
+    "tawjihiSeason": "April-June: peak for exam prep",
+    "summerDead": "June-August: near-zero enrollment — must have cash reserve to survive",
+    "acquisitionChannel": "WhatsApp groups + word of mouth — parents share tutor recommendations",
+    "onlineGrowth": "Post-COVID online tutoring normalized. Hybrid (physical + online materials) now expected."
+  }
+}

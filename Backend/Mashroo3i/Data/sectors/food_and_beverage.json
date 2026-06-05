@@ -1,0 +1,243 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Talabat Jordan merchant data 2025", "Amman municipality", "Jordan Restaurant Association", "field surveys Amman cafes 2025"]
+  },
+  "subSectors": [
+    "Cafe / Coffee Shop",
+    "Fast Food / Sandwiches",
+    "Full-Service Restaurant",
+    "Cloud Kitchen / Delivery-Only",
+    "Catering",
+    "Juice Bar / Healthy Food",
+    "Bakery / Pastry"
+  ],
+  "marketSize_JOD": {
+    "cafesAndCoffeeShops_amman": "80-120M",
+    "fastFoodAndSandwiches_amman": "60-90M",
+    "fullServiceRestaurants_amman": "150-220M",
+    "cloudKitchens_jordan": "15-30M",
+    "catering_jordan": "25-40M",
+    "totalFoodAndBeverage_jordan": "450-650M",
+    "growthTrend": "GROWING",
+    "note": "Jordan Restaurant Association 2024: F&B is one of the largest SME sectors. Talabat Jordan processes 500,000+ monthly orders. Amman cafe market growing 8-12% annually driven by young population and social cafe culture.",
+    "aiPromptGuidance": "For cafe or coffee shop ideas use cafesAndCoffeeShops_amman. For sandwich shops or fast food use fastFoodAndSandwiches_amman. For cloud kitchens use cloudKitchens_jordan. Never use total F&B figure for a single small cafe — realistic addressable market for one neighborhood cafe is 0.5-2M JOD."
+  },
+  "knownCompetitors": {
+    "cafe_coffee": [
+      {
+        "name": "Books@Cafe",
+        "type": "Iconic Amman cafe with books and cultural events",
+        "locations": "Rainbow Street, Amman",
+        "targetSegment": "Young professionals, expats, intellectuals 20-40",
+        "priceRange": "3-8 JOD coffee, 5-12 JOD food items",
+        "mainStrength": "Iconic brand, loyal repeat customers, unique Rainbow Street location, cultural identity",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Cafe / Coffee Shop"]
+      },
+      {
+        "name": "Rumi Cafe",
+        "type": "Trendy specialty coffee shop",
+        "locations": "Multiple west Amman branches",
+        "targetSegment": "Coffee enthusiasts and young professionals 20-35",
+        "priceRange": "3-7 JOD coffee, 4-10 JOD food",
+        "mainStrength": "Strong Instagram presence, specialty coffee quality, loyal community following",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Cafe / Coffee Shop"]
+      },
+      {
+        "name": "Caribou Coffee",
+        "type": "International coffee chain",
+        "locations": "Multiple Amman branches including malls and commercial areas",
+        "targetSegment": "General coffee drinkers, families, professionals",
+        "priceRange": "3-6 JOD coffee, 3-8 JOD food",
+        "mainStrength": "International brand trust, consistent quality, loyalty app, drive-through locations",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Cafe / Coffee Shop"]
+      },
+      {
+        "name": "Independent Neighborhood Cafes (archetype)",
+        "type": "Small local cafes in residential Amman areas",
+        "locations": "Sweifieh, Khalda, Jubeiha, Medina Street, Tlaa Al-Ali",
+        "targetSegment": "Local residents and daily customers",
+        "priceRange": "1.5-4 JOD coffee, 2-5 JOD sandwiches",
+        "mainStrength": "Lower prices, convenience, familiar local atmosphere, daily habit customers",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Cafe / Coffee Shop", "Fast Food / Sandwiches"],
+        "note": "Hundreds of small independent cafes in every Amman neighborhood. This is the most direct competitor for any new small cafe."
+      }
+    ],
+    "fast_food_sandwiches": [
+      {
+        "name": "Hashem Restaurant",
+        "type": "Iconic falafel and hummus institution",
+        "locations": "Downtown Amman",
+        "targetSegment": "All demographics — tourist and local institution",
+        "priceRange": "0.5-3 JOD per item",
+        "mainStrength": "Legendary status, ultra-low prices, 60+ years brand equity",
+        "threat": "LOW",
+        "relevantSubSectors": ["Fast Food / Sandwiches"]
+      },
+      {
+        "name": "Shawarma Reem",
+        "type": "Popular shawarma chain",
+        "locations": "Multiple Amman branches",
+        "targetSegment": "General public, daily meals",
+        "priceRange": "1.5-4 JOD per sandwich",
+        "mainStrength": "Consistent quality, fast service, loyal daily customers, multiple locations",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Fast Food / Sandwiches"]
+      }
+    ],
+    "delivery_platforms": [
+      {
+        "name": "Talabat",
+        "type": "Food delivery platform",
+        "locations": "Jordan-wide",
+        "targetSegment": "Online food orderers",
+        "priceRange": "20-30% commission on every order",
+        "mainStrength": "#1 food delivery in Jordan, massive customer base, marketing exposure for new restaurants",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Cafe / Coffee Shop", "Fast Food / Sandwiches", "Cloud Kitchen / Delivery-Only"],
+        "note": "Talabat is a channel AND a competitor. It provides traffic but takes 20-30% commission per order. A 5 JOD sandwich that costs 2 JOD to make yields only 1.0-1.5 JOD profit after Talabat commission."
+      }
+    ]
+  },
+  "marketContext": {
+    "talabatOrders_monthly_jordan": "500,000+",
+    "cafeCulture": "Amman has one of the highest cafe-per-capita rates in the Arab world. Cafe-going is a primary social activity for youth.",
+    "socialMediaImpact": "A well-photographed cafe interior can generate 10,000+ Instagram impressions in first week through local food bloggers. Aesthetics drive trial visits.",
+    "corporateBreakfast": "B2B catering for office breakfast is underserved in Amman — opportunity for cafes near business districts"
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 10000, "high": 80000, "typical": 30000 },
+    "byModel": {
+      "small_cafe_60_80sqm": {
+        "low": 15000, "high": 35000, "typical": 22000,
+        "breakdown": {
+          "rent_deposit_2months": 2000,
+          "fitout_interior": 8000,
+          "kitchen_equipment": 5000,
+          "coffee_machine_commercial": 3000,
+          "initial_stock": 1500,
+          "licensing_municipality": 800,
+          "signage_branding": 500,
+          "contingency": 1200
+        }
+      },
+      "cloud_kitchen": { "low": 8000, "high": 20000, "typical": 13000 },
+      "catering_home": { "low": 3000, "high": 8000, "typical": 5000 },
+      "full_restaurant_80_150sqm": { "low": 35000, "high": 80000, "typical": 50000 }
+    },
+    "legalRequirements": {
+      "municipalityLicense_JOD": "500-1500 depending on Amman district and space size",
+      "healthInspection_JOD": 200,
+      "fireSafetyApproval": "Required — cost varies by size",
+      "processingTime_weeks": "4-8 weeks for full licensing. Plan for delays.",
+      "note": "Cannot operate without municipality license. Apply immediately — delays are common and expensive."
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 1500, "high": 6000, "typical": 3000 },
+    "byModel": {
+      "small_cafe_60_80sqm": {
+        "rent_sweifieh_khalda": 1200,
+        "rent_jubeiha_note": "Jubeiha and east Amman residential areas: 600-900 JOD/month for similar size",
+        "utilities_electricity_water": 250,
+        "staff_2employees": 940,
+        "supplies_coffee_food": 800,
+        "talabat_commission_estimate": 300,
+        "marketing": 150,
+        "maintenance_misc": 100,
+        "total_range": "2500-4000",
+        "note": "West Amman (Sweifieh, Khalda) rent is 1000-1800 JOD/month for 60-80 sqm commercial in 2025. Jubeiha and residential areas are 500-900 JOD/month."
+      },
+      "cloud_kitchen": {
+        "kitchen_rental": 600,
+        "utilities": 150,
+        "staff_1cook": 470,
+        "packaging": 200,
+        "talabat_commission": 400,
+        "marketing": 200,
+        "total_range": "1800-2500"
+      }
+    },
+    "staffCosts": {
+      "barista_junior_total": { "monthly": 537, "note": "470 JOD salary + 67 JOD SSC" },
+      "cook_junior_total": { "monthly": 537, "note": "470 JOD salary + 67 JOD SSC" },
+      "2_staff_total": 1074
+    }
+  },
+  "margins": {
+    "cafe_beverages": {
+      "grossMargin_pct": { "low": 60, "high": 75, "typical": 68 },
+      "note": "Coffee beverages have high margins. A 3 JOD cappuccino costs ~0.8 JOD to make = 73% gross margin."
+    },
+    "food_sandwiches": {
+      "grossMargin_pct": { "low": 40, "high": 60, "typical": 50 },
+      "note": "Sandwiches and food items have lower margins due to ingredients and labor."
+    },
+    "blended_cafe_food": {
+      "grossMargin_pct": { "low": 45, "high": 65, "typical": 55 },
+      "note": "Blended margin for a cafe selling both beverages and food items."
+    },
+    "talabat_adjusted_margin": {
+      "grossMargin_pct": { "low": 25, "high": 45, "typical": 35 },
+      "note": "After Talabat 20-30% commission, gross margin drops significantly. Heavy Talabat dependence destroys profitability."
+    },
+    "netMargin_pct": { "low": 5, "high": 20, "typical": 10 }
+  },
+  "pricingBenchmarks_JOD": {
+    "coffee_espresso": { "low": 1.5, "high": 4, "typical": 2.5 },
+    "coffee_specialty": { "low": 3, "high": 7, "typical": 4.5 },
+    "sandwich_basic": { "low": 2, "high": 5, "typical": 3.5 },
+    "sandwich_premium": { "low": 4, "high": 8, "typical": 5.5 },
+    "juice_fresh": { "low": 2, "high": 5, "typical": 3 },
+    "average_ticket_per_customer": { "low": 4, "high": 12, "typical": 7 },
+    "daily_revenue_needed_to_cover_costs": {
+      "small_cafe_minimum": 100,
+      "small_cafe_profitable": 150,
+      "note": "A small cafe with 2500 JOD/month costs needs 83 JOD/day minimum at 30-day month. Target 100-150 JOD/day to build profit."
+    }
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": { "low": 0, "high": 5, "typical": 2 },
+    "instagramOrganic": { "low": 3, "high": 15, "typical": 8 },
+    "talabat_listing": { "low": 0, "high": 0, "note": "No upfront cost but 20-30% ongoing commission per order" },
+    "paidAds": { "low": 10, "high": 35, "typical": 18 },
+    "googleMaps": { "low": 0, "high": 5, "typical": 2, "note": "Free listing — essential for any physical cafe" }
+  },
+  "monthlyChurn_pct": {
+    "regular_daily_customers": { "low": 5, "high": 20, "typical": 10 },
+    "talabat_customers": { "low": 30, "high": 60, "typical": 45, "note": "Delivery customers are much less loyal than walk-in regulars" }
+  },
+  "breakEven_months": {
+    "small_cafe": { "low": 6, "high": 18, "typical": 10 },
+    "cloud_kitchen": { "low": 4, "high": 12, "typical": 7 },
+    "note": "Cafes in Amman typically take 8-14 months to reach full break-even. Budget must cover fixed costs for this entire period."
+  },
+  "commonRisks": [
+    "Sweifieh and west Amman cafe market is extremely saturated — dozens of established competitors within walking distance",
+    "Talabat commissions of 20-30% destroy margins on delivery orders — use Talabat for discovery, convert to WhatsApp for repeat orders",
+    "Municipality licensing delays can push opening back 6-12 weeks — apply immediately",
+    "Commercial espresso machine breakdown can stop operations — budget 500-1000 JOD for emergency maintenance",
+    "Staff turnover: baristas and cooks frequently leave for better-paying positions — train backup staff",
+    "Ramadan shifts all customer patterns: evening business spikes, morning business collapses",
+    "Word of mouth takes 3-6 months to build in a new neighborhood — cash reserve must cover this gap"
+  ],
+  "redFlags": {
+    "dailyRevenueDanger_JOD": 60,
+    "dailyRevenueWarning_JOD": 100,
+    "talabatShareAbove_pct": 60,
+    "breakEvenAbove_months": 18,
+    "workingCapitalMinimum_JOD": 4000,
+    "note": "If Talabat orders represent more than 60% of revenue, the business is paying 20-30% commission on majority of income — not sustainable."
+  },
+  "jordanContext": {
+    "primaryAcquisitionChannel": "Instagram aesthetics + Google Maps reviews + Talabat listing for discovery",
+    "talabatStrategy": "List on Talabat at launch for visibility, but actively move repeat customers to WhatsApp ordering with a loyalty discount. Reduces commission dependency over time.",
+    "cafeAesthetics": "Instagram-worthy interior is now a business requirement in Amman, not a luxury. Budget 2000-5000 JOD for interior design that photographs well.",
+    "jubeihaOpportunity": "Jubeiha and university areas have lower competition and lower rent than west Amman, with a large captive student population. Strong opportunity for budget cafes.",
+    "sweifiehWarning": "Sweifieh is one of the most cafes-per-block areas in Amman. New entrants need a clear differentiator — specialty product, unique design, or lower price — to survive."
+  }
+}

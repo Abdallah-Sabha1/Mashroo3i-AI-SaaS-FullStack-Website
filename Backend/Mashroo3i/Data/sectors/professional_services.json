@@ -1,0 +1,156 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Amman Chamber of Commerce 2024", "Jordan freelance market surveys 2025", "field research"]
+  },
+  "subSectors": [
+    "Freelancer (solo)",
+    "Small Agency (2-4 people)",
+    "Boutique Agency (5-10 people)"
+  ],
+  "specializations": [
+    "Graphic Design",
+    "Web Development",
+    "Digital Marketing",
+    "Accounting / Bookkeeping",
+    "HR Consulting",
+    "Copywriting / Content",
+    "IT Support"
+  ],
+  "marketSize_JOD": {
+    "digitalMarketingAgencies_amman": "25-40M",
+    "accountingBookkeeping_jordan": "20-30M",
+    "itServicesConsulting_jordan": "80-120M",
+    "totalProfessionalServices_amman": "60-90M",
+    "growthTrend": "STABLE",
+    "note": "180,000 SMEs in Jordan — all need some form of professional services. Wasta-driven market; referrals dominate over ads.",
+    "aiPromptGuidance": "For graphic design or social media freelancers use digitalMarketingAgencies_amman (25-40M). For accounting use accountingBookkeeping_jordan. For IT consulting use itServicesConsulting_jordan. Never use totalProfessionalServices_amman as the addressable market for a single solo freelancer — their realistic reachable market is 2-5% of the sub-sector figure."
+  },
+  "knownCompetitors": {
+    "digital_marketing": [
+      {
+        "name": "Multiply",
+        "type": "Digital marketing agency",
+        "locations": "Amman",
+        "targetSegment": "Mid-size Jordanian and regional brands",
+        "priceRange": "1200-3500 JOD/month retainer",
+        "mainStrength": "Regional client base, full-service offering, established portfolio",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Small Agency (2-4 people)", "Boutique Agency (5-10 people)"]
+      },
+      {
+        "name": "Celsius Advertising",
+        "type": "Integrated marketing and advertising agency",
+        "locations": "Amman",
+        "targetSegment": "Large corporates and government",
+        "priceRange": "2000-8000 JOD/month retainer",
+        "mainStrength": "Large team, traditional + digital media, long-standing client relationships",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Boutique Agency (5-10 people)"]
+      }
+    ],
+    "web_development": [
+      {
+        "name": "Orange Jordan digital services",
+        "type": "Telecom-backed digital solutions",
+        "locations": "Amman",
+        "targetSegment": "SMEs and enterprises",
+        "priceRange": "500-5000 JOD project-based",
+        "mainStrength": "Telecom infrastructure, trusted brand, SME digitization programs",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Small Agency (2-4 people)"]
+      }
+    ],
+    "freelance_platforms": [
+      {
+        "name": "Khamsat",
+        "type": "Arabic freelance services marketplace",
+        "locations": "Online, pan-Arab",
+        "targetSegment": "Buyers of freelance creative and tech services across Arab world",
+        "priceRange": "5-150 JOD per project (very low — platform drives race to bottom)",
+        "mainStrength": "Arabic-first, very low prices, massive service catalog, instant delivery",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Freelancer (solo)"]
+      },
+      {
+        "name": "Upwork",
+        "type": "Global freelance platform",
+        "locations": "Online — international clients",
+        "targetSegment": "International clients seeking remote workers",
+        "priceRange": "15-60 JOD/hour (international rates)",
+        "mainStrength": "Global reach, credibility system, payment protection, international clients",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Freelancer (solo)"]
+      },
+      {
+        "name": "Fiverr",
+        "type": "Global gig-based freelance platform",
+        "locations": "Online — international clients",
+        "targetSegment": "Buyers seeking quick affordable creative services globally",
+        "priceRange": "5-200 JOD per gig",
+        "mainStrength": "Massive buyer pool, gig structure, international payment, seller ratings",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Freelancer (solo)"]
+      }
+    ]
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 2000, "high": 15000, "typical": 5500 },
+    "bySize": {
+      "solo_freelancer": { "low": 2000, "high": 4000, "typical": 2800 },
+      "small_agency_2_4": { "low": 5000, "high": 10000, "typical": 6500 }
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 400, "high": 2500, "typical": 1200 },
+    "bySize": {
+      "solo_home": {
+        "software": 50, "internet_phone": 20, "marketing": 50, "other": 30, "total_range": "150-200",
+        "note": "Home-based solo freelancer. No rent. Adobe CC ~25 JOD/month, Canva Pro ~8 JOD/month included in software."
+      },
+      "small_agency": {
+        "officeRent": 600, "utilities": 50, "staff_1employee": 470, "software": 100, "marketing": 100, "other": 100, "total_range": "1400-1800"
+      }
+    }
+  },
+  "margins": {
+    "grossMargin_pct": { "low": 50, "high": 75, "typical": 62 },
+    "netMargin_pct": { "low": 20, "high": 45, "typical": 30 }
+  },
+  "pricingBenchmarks_JOD": {
+    "hourlyRate_midLevel": { "low": 20, "high": 50, "typical": 32 },
+    "hourlyRate_senior": { "low": 50, "high": 100, "typical": 70 },
+    "monthlyRetainer_small": { "low": 400, "high": 1200, "typical": 700 },
+    "monthlyRetainer_medium": { "low": 1200, "high": 3500, "typical": 2000 },
+    "projectBased": { "low": 1000, "high": 10000, "typical": 4000 },
+    "socialMediaManagement_monthly": { "low": 200, "high": 800, "typical": 450 },
+    "logoDesign_oneTime": { "low": 80, "high": 500, "typical": 200 },
+    "note": "200-400 JOD/month retainer is BELOW market benchmark of 400-1200 JOD for a small client. Freelancers charging below 400 JOD/month attract price-sensitive clients who churn faster."
+  },
+  "salesCycle_months": { "low": 0.5, "high": 3, "typical": 1.5 },
+  "clientRetentionRate_pct": { "low": 60, "high": 90, "typical": 80 },
+  "breakEven_months": { "low": 2, "high": 6, "typical": 4 },
+  "commonRisks": [
+    "Khamsat and Fiverr drive race-to-bottom pricing — local freelancers undercut each other to compete with 5 JOD Khamsat gigs",
+    "Client concentration: with 3-4 clients, losing one wipes 25-33% of revenue overnight",
+    "B2B payment terms 30-60 days standard — cash flow gap between work done and money received",
+    "Wasta dependency: without existing personal network, first 3 clients take 2-4 months to land",
+    "Scope creep: clients expand requests without paying more — set written scope boundaries from day one",
+    "Fresh graduates lack portfolio — first 2-3 clients require discounted or free work to build proof"
+  ],
+  "redFlags": {
+    "ltvCacMinimum": 3,
+    "breakEvenMax_months": 9,
+    "lowClientRetention_pct": 60,
+    "clientConcentrationWarning": "If top 2 clients = 50%+ revenue, diversify urgently.",
+    "paymentTermsWarning": "Enforce 30-day payment terms with late-payment penalties.",
+    "pricingDanger": "Monthly retainer below 400 JOD signals underpricing — attracts low-quality clients and unsustainable income"
+  },
+  "jordanContext": {
+    "wastaImpact": "Personal connections accelerate closing 30-50%. Warm referrals 3-4x faster than cold outreach.",
+    "companyRegistration_JOD": "200-500 (one-time)",
+    "startupActIncentive": "0% corporate income tax for 3 years — verify at JEDCO",
+    "paymentTerms": "30-60 day terms standard. Maintain 2-3 months cash runway before first inflow.",
+    "restaurantOpportunity": "Amman has hundreds of independent restaurants and cafes that manage Instagram poorly and cannot afford full agencies — strong niche for freelancers offering bundled social media packages at 400-700 JOD/month"
+  }
+}

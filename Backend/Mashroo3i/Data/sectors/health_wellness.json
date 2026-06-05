@@ -1,0 +1,184 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Statista 2024", "Jordan Ministry of Health", "Amman municipality licensing", "field research 2025"]
+  },
+  "subSectors": [
+    "Gym / Fitness Studio",
+    "Nutrition & Diet Consulting",
+    "Beauty Salon / Barber",
+    "Wellness & Spa",
+    "Home Healthcare",
+    "Physiotherapy / Rehab Clinic",
+    "Dental / Medical Clinic",
+    "Mental Health / Coaching"
+  ],
+  "marketSize_JOD": {
+    "gymFitnessStudios_amman": "28-38M",
+    "beautyWellness_amman": "18-25M",
+    "totalHealthWellness_jordan": "55-75M",
+    "digitalFitness_USD_2027_projected": "66M",
+    "growthTrend": "GROWING",
+    "note": "Digital fitness growing 10.28% CAGR 2023-2027 per Statista. Physical wellness growing with urban middle class.",
+    "aiPromptGuidance": "For gym or fitness ideas use gymFitnessStudios_amman. For beauty or salon ideas use beautyWellness_amman. For online coaching use digitalFitness_USD_2027_projected converted at 0.71."
+  },
+  "knownCompetitors": {
+    "gym_fitness": [
+      {
+        "name": "Curves for Women",
+        "type": "Women-only circuit training gym",
+        "locations": "Multiple Amman branches including Sweifieh, Khalda, Abdoun",
+        "priceRange": "25-45 JOD/month",
+        "targetSegment": "Women 30-55, time-constrained",
+        "mainStrength": "International franchise brand trust, women-only format, multiple branches",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Gym / Fitness Studio"]
+      },
+      {
+        "name": "Magma Lifestyle & Fitness Center",
+        "type": "Premium full-service gym",
+        "locations": "Abdoun, Amman",
+        "priceRange": "80-150 JOD/month",
+        "targetSegment": "Upper-income professionals",
+        "mainStrength": "50+ weekly classes, rooftop track, nutrition services, 30+ trainers",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Gym / Fitness Studio", "Wellness & Spa"]
+      },
+      {
+        "name": "Hive Gym",
+        "type": "Large full-service gym with pools",
+        "locations": "West Amman",
+        "priceRange": "60-100 JOD/month",
+        "targetSegment": "Mixed, families and professionals",
+        "mainStrength": "Pools, jacuzzis, large equipment variety",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Gym / Fitness Studio"]
+      },
+      {
+        "name": "CrossFit Crescent",
+        "type": "CrossFit box",
+        "locations": "Amman",
+        "priceRange": "70-120 JOD/month",
+        "targetSegment": "Fitness enthusiasts 20-35",
+        "mainStrength": "Strong community, high-intensity niche",
+        "threat": "LOW",
+        "relevantSubSectors": ["Gym / Fitness Studio"]
+      }
+    ],
+    "beauty_wellness": [
+      {
+        "name": "Haya Cultural Centre Spa",
+        "type": "Government-affiliated wellness center",
+        "locations": "Multiple Amman locations",
+        "priceRange": "20-50 JOD/session",
+        "targetSegment": "Women, families",
+        "mainStrength": "Subsidized pricing, trusted brand",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Beauty Salon / Barber", "Wellness & Spa"]
+      },
+      {
+        "name": "Indulge Salon",
+        "type": "Premium women's hair and beauty salon",
+        "locations": "Multiple west Amman branches",
+        "priceRange": "30-120 JOD/session",
+        "targetSegment": "Women 25-50, professional and social occasions",
+        "mainStrength": "Strong brand loyalty, experienced stylists, premium positioning",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Beauty Salon / Barber"]
+      }
+    ]
+  },
+  "marketContext": {
+    "insight": "Jordan healthcare is world-class relative to GDP. B2C wellness (fitness, nutrition, mental health) is underserved and growing with urban middle class.",
+    "medicalTourism_patientsYearly": 250000,
+    "digitalHealthGrowing": "Tele-dentistry and telehealth startups emerging — digital-first wellness viable",
+    "womenOnlyOpportunity": "Women-only gyms command premium loyalty in Amman. Curves dominates mid-market 30-55 age group; boutique gap exists for ages 20-35."
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 500, "high": 80000, "typical": 15000 },
+    "byModel": {
+      "online_wellness_coaching": { "low": 500, "high": 2000, "typical": 1000 },
+      "home_service": { "low": 2000, "high": 6000, "typical": 3500 },
+      "beauty_salon_small": { "low": 8000, "high": 20000, "typical": 12000 },
+      "gym_studio": { "low": 15000, "high": 40000, "typical": 22000 },
+      "physiotherapy_clinic": { "low": 10000, "high": 30000, "typical": 18000 },
+      "medical_clinic": { "low": 50000, "high": 180000, "typical": 90000 }
+    },
+    "legalRequirements": {
+      "homeHealthcareLicense_JOD": 300,
+      "annualInspectionFee_JOD": 200,
+      "medicalClinicLicense": "Ministry of Health approval — varies by specialty",
+      "beautyLicense": "Municipality license required. Cost varies by Amman district.",
+      "gymLicense_JOD": "500-1500 depending on Amman district and floor area"
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 170, "high": 5000, "typical": 2000 },
+    "byModel": {
+      "online_coaching": {
+        "tools": 20, "marketing": 150, "total_range": "170-300"
+      },
+      "beauty_salon": {
+        "rent": 700, "utilities": 100, "staff_1": 470, "supplies": 200, "marketing": 100, "total_range": "1500-2100"
+      },
+      "gym_small": {
+        "rent_westAmman_note": "West Amman (Sweifieh, Khalda, Abdoun) commercial rent for 150-200 sqm is 1200-2000 JOD/month in 2025",
+        "rent": 1400, "utilities": 300, "staff_1": 470, "maintenance": 150, "marketing": 150, "total_range": "2500-4000"
+      },
+      "physiotherapy": {
+        "rent": 600, "equipment_maintenance": 100, "staff": 650, "marketing": 100, "total_range": "1500-2600"
+      }
+    },
+    "staffCosts_note": "Female instructor/trainer minimum 470 JOD/month + 67 JOD SSC = 537 JOD total. For 2 staff multiply accordingly."
+  },
+  "margins": {
+    "online_coaching": { "grossMargin_pct": { "low": 70, "high": 90, "typical": 80 } },
+    "beauty_salon": { "grossMargin_pct": { "low": 45, "high": 65, "typical": 55 } },
+    "gym": { "grossMargin_pct": { "low": 40, "high": 65, "typical": 52 } },
+    "physiotherapy": { "grossMargin_pct": { "low": 50, "high": 70, "typical": 60 } },
+    "medical_clinic": { "grossMargin_pct": { "low": 35, "high": 60, "typical": 48 } },
+    "netMargin_pct": { "low": 10, "high": 35, "typical": 20 }
+  },
+  "pricingBenchmarks_JOD": {
+    "gymMembership_monthly": { "low": 25, "high": 80, "typical": 45 },
+    "personalTraining_session": { "low": 15, "high": 50, "typical": 25 },
+    "nutritionConsult_session": { "low": 20, "high": 60, "typical": 35 },
+    "beautyHaircut_women": { "low": 15, "high": 60, "typical": 30 },
+    "physiotherapy_session": { "low": 25, "high": 70, "typical": 40 },
+    "onlineCoaching_monthly": { "low": 50, "high": 200, "typical": 90 }
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": { "low": 2, "high": 10, "typical": 5 },
+    "instagramOrganic": { "low": 5, "high": 20, "typical": 10 },
+    "paidAds": { "low": 15, "high": 50, "typical": 25 },
+    "googleMaps": { "low": 10, "high": 35, "typical": 20 }
+  },
+  "monthlyChurn_pct": {
+    "gym": { "low": 8, "high": 25, "typical": 15 },
+    "beauty_salon": { "low": 5, "high": 20, "typical": 10 },
+    "coaching": { "low": 10, "high": 30, "typical": 18 }
+  },
+  "breakEven_months": {
+    "online_coaching": { "low": 1, "high": 4, "typical": 2 },
+    "beauty_salon": { "low": 6, "high": 14, "typical": 9 },
+    "gym": { "low": 8, "high": 18, "typical": 12 },
+    "medical_clinic": { "low": 12, "high": 36, "typical": 20 }
+  },
+  "commonRisks": [
+    "Medical clinics: first months rarely cover payroll — need JOD 5K-15K working capital reserve",
+    "Most wellness is cash-pay — no insurance reimbursement in Jordan",
+    "Seasonal gym churn: January spike (resolutions), summer drop (heat and school holidays)",
+    "Ministry of Health licensing delays can push launch back 2-4 months",
+    "One bad Instagram review can significantly damage reputation in tight Amman community",
+    "West Amman commercial rent (Sweifieh, Khalda, Abdoun) rose 25-40% between 2022-2025 — budget 1200-2000 JOD/month for 150-200 sqm"
+  ],
+  "redFlags": {
+    "gymChurnAbove_pct": 25,
+    "breakEvenAbove_months": 24,
+    "workingCapitalMinimum_JOD": 5000
+  },
+  "jordanContext": {
+    "primaryAcquisitionChannel": "Word of mouth + Google Maps reviews + Instagram before/after content",
+    "womenOnlyNiche": "Women-only gyms and salons command premium pricing and strong loyalty in Amman. Curves dominates 30-55 age group but boutique gap exists for 20-35."
+  }
+}

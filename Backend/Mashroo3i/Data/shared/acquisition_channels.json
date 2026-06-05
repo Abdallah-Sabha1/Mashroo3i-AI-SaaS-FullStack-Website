@@ -1,0 +1,87 @@
+{
+  "jordanAdCostContext": {
+    "dominantB2CChannel": "Instagram (primary for discovery and purchase in Amman)",
+    "dominantB2BChannel": "Direct sales / referrals (wasta accelerates by 30-50%)"
+  },
+  "channels": {
+    "word_of_mouth": {
+      "cacMultiplier": 0.25,
+      "timeToScale": "Slow (3-6 months)",
+      "costType": "Time-based, minimal cash",
+      "bestFor": [ "F&B", "Professional Services", "Health & Wellness" ],
+      "notes": "Dominant in Amman. Strongest channel for F&B and B2B. Referrals via friends/family."
+    },
+    "social_media_organic": {
+      "cacMultiplier": 0.5,
+      "timeToScale": "Medium (2-4 months to see results)",
+      "costType": "Time-intensive, low cash",
+      "bestFor": [ "Retail & E-commerce", "F&B", "Health & Wellness", "Education" ],
+      "notes": "Instagram is THE channel in Amman. Best for 6+ month horizon. Content creation is the main investment."
+    },
+    "paid_ads_meta": {
+      "cacMultiplier": 1.8,
+      "timeToScale": "Fast (immediate, needs optimization)",
+      "costType": "Ongoing spend required",
+      "CPM_USD_range": "0.80-1.50",
+      "bestFor": [ "Retail & E-commerce", "F&B", "Health & Wellness" ],
+      "notes": "Faster results. Jordan CPM is among the lowest in digital advertising globally."
+    },
+    "paid_ads_google": {
+      "cacMultiplier": 2.5,
+      "timeToScale": "Fast (immediate, high intent)",
+      "costType": "Ongoing spend, higher CPC than Meta",
+      "bestFor": [ "Professional Services", "Tech & Software", "Health & Wellness" ],
+      "notes": "Higher intent than social. 2-3x more expensive than Instagram. Good for service discovery."
+    },
+    "seo_organic_search": {
+      "cacMultiplier": 0.8,
+      "timeToScale": "Slow (3-6 months payoff)",
+      "costType": "High effort, low direct cost",
+      "bestFor": [ "Tech & Software", "Education & Training", "Professional Services" ],
+      "notes": "Amman market not yet SEO-saturated. Arabic SEO underserved — opportunity."
+    },
+    "delivery_platform": {
+      "cacMultiplier": 3.5,
+      "timeToScale": "Immediate (platform provides traffic)",
+      "costType": "20-30% commission on every order",
+      "bestFor": [ "F&B" ],
+      "notes": "Talabat is #1 in Jordan. High CAC but guaranteed traffic. Diversify to own channels (WhatsApp/Instagram) to reduce commission dependency.",
+      "talabatJordanData": {
+        "marketPosition": "#1 food delivery platform in Jordan",
+        "commissionRateEstimate": "20-30%",
+        "avgDeliveryTime": "<30 minutes",
+        "strategy": "Use for discovery, convert repeat customers to direct WhatsApp ordering"
+      }
+    },
+    "direct_sales_b2b": {
+      "cacMultiplier": 4.0,
+      "wastaAdjustedMultiplier": 2.0,
+      "timeToScale": "Medium (1.5-3 month sales cycle)",
+      "costType": "Sales team time + follow-up costs",
+      "bestFor": [ "Professional Services", "Tech & Software", "Education & Training" ],
+      "notes": "High CAC but high contract value justifies it. Wasta (personal network) reduces effective CAC by ~50%."
+    },
+    "partnerships_referral_programs": {
+      "cacMultiplier": 0.4,
+      "timeToScale": "Medium (2-3 months to set up)",
+      "costType": "Revenue share / commission",
+      "bestFor": [ "All sectors" ],
+      "notes": "Efficient if partner network exists. Jordan ecosystem: leverage JHub, accelerators, Chamber of Commerce networks."
+    },
+    "marketplace_listing": {
+      "cacMultiplier": 2.0,
+      "timeToScale": "Fast (immediate visibility)",
+      "costType": "5-15% platform commission",
+      "bestFor": [ "Retail & E-commerce" ],
+      "notes": "Noon/OpenSooq growing. Commission 5-15%. Credibility boost for new brands."
+    }
+  },
+  "cacByChannel_JOD": {
+    "word_of_mouth": "2-8 JOD",
+    "instagram_organic": "3-15 JOD",
+    "instagram_paid": "10-40 JOD",
+    "google_ads": "15-50 JOD",
+    "delivery_platform": "20-50 JOD (implicit via commission)",
+    "direct_sales_b2b": "50-200 JOD (justified by high contract value)"
+  }
+}

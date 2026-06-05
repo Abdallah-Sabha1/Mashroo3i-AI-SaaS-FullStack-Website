@@ -1,0 +1,183 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Statista 2025", "Jordan ecommerce report 2024", "Aramex Jordan", "field research Amman 2025"]
+  },
+  "subSectors": [
+    "Instagram / Social Store (inventory-based)",
+    "Handmade / Craft Products",
+    "Dropshipping",
+    "Physical Boutique",
+    "Marketplace Reseller (OpenSooq, Noon)"
+  ],
+  "marketSize_JOD": {
+    "ecommerceJordan_USD_2025": "2553M",
+    "ecommerceJordan_JOD_approx": "1810M",
+    "ammanShare_approx": "55-60%",
+    "fashionBeautyOnline_JOD": "80-130M",
+    "homeGoodsOnline_JOD": "40-70M",
+    "handmadeCraftOnline_JOD": "8-18M",
+    "growthTrend": "GROWING",
+    "note": "Statista 2025: $2.55B ecommerce market, 9.4% CAGR to 2029. COD dominant. Instagram is primary discovery channel.",
+    "aiPromptGuidance": "For handmade or craft Instagram sellers use handmadeCraftOnline_JOD. For fashion or beauty use fashionBeautyOnline_JOD. For home goods use homeGoodsOnline_JOD. Never use ecommerceJordan_JOD_approx for a single-product home-based seller — that is the entire national ecommerce figure."
+  },
+  "knownCompetitors": {
+    "marketplace": [
+      {
+        "name": "Noon.com",
+        "type": "Regional e-commerce marketplace",
+        "locations": "Jordan, UAE, Saudi Arabia, Egypt",
+        "targetSegment": "General online shoppers",
+        "priceRange": "Varies — mass-market pricing, often 5-15% below Instagram sellers",
+        "mainStrength": "Regional logistics, brand trust, wide product range, fast delivery",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Marketplace Reseller (OpenSooq, Noon)", "Dropshipping", "Instagram / Social Store (inventory-based)"]
+      },
+      {
+        "name": "OpenSooq",
+        "type": "Classifieds and marketplace platform",
+        "locations": "Jordan, pan-Arab",
+        "targetSegment": "Second-hand, SME sellers, individual buyers",
+        "priceRange": "Free listings — seller sets price, typically 10-30% below retail",
+        "mainStrength": "Largest Arabic classifieds platform, free listings, 60M+ users MENA",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Marketplace Reseller (OpenSooq, Noon)", "Handmade / Craft Products"]
+      },
+      {
+        "name": "CashBasha",
+        "type": "Jordan-based e-commerce with COD focus",
+        "locations": "Amman, Jordan-wide delivery",
+        "targetSegment": "Jordanian online shoppers preferring local platform",
+        "priceRange": "Competitive pricing, COD-focused",
+        "mainStrength": "Local trust, COD expertise, Jordanian brand",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Instagram / Social Store (inventory-based)", "Dropshipping"]
+      }
+    ],
+    "instagram_social_sellers": [
+      {
+        "name": "Local Instagram Handmade Sellers (archetype)",
+        "type": "Home-based Instagram sellers in Amman",
+        "locations": "Instagram/WhatsApp, Amman-based",
+        "targetSegment": "Jordanian women 20-40 buying gifts, home decor, crafts",
+        "priceRange": "5-50 JOD per item — highly variable",
+        "mainStrength": "Personal trust, low prices, fast WhatsApp response, local delivery same day",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Handmade / Craft Products", "Instagram / Social Store (inventory-based)"],
+        "note": "Hundreds of home-based sellers compete on Amman Instagram in candles, decor, clothing, food. Most price lower than branded sellers. This is the primary competitor for any Instagram-based home business."
+      }
+    ],
+    "fashion_social": [
+      {
+        "name": "Wakilni",
+        "type": "Personal shopping and delivery service",
+        "locations": "Amman",
+        "targetSegment": "Shoppers wanting international brands",
+        "priceRange": "Service fee 15-30 JOD + product cost",
+        "mainStrength": "Access to international products, trusted local operation",
+        "threat": "LOW",
+        "relevantSubSectors": ["Physical Boutique"]
+      }
+    ]
+  },
+  "marketContext": {
+    "onlineShopper_pct": 36,
+    "under30_population_pct": 70,
+    "creditCardPenetration_pct": 25,
+    "dominantChannels": ["Instagram", "OpenSooq", "Noon.com", "Facebook Marketplace"],
+    "codRisk": "Budget 10-15% of COD orders for refusal/returns — build into forecasts",
+    "seasonalDemand": {
+      "ramadan": "March-April 2025: gifting and food orders spike 40-60%",
+      "eid_alFitr": "April 2025: peak gifting season — candles, decor, clothing highest demand",
+      "eid_alAdha": "June 2025: second gifting peak",
+      "weddingSeason": "April-June and September-November: strong demand for gift bundles and decor",
+      "backToSchool": "August-September: stationery and clothing spike",
+      "summerSlump": "July-August: lowest general consumer spending — plan for 30-40% revenue drop"
+    }
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 1500, "high": 25000, "typical": 6000 },
+    "byModel": {
+      "handmade_instagram": { "low": 800, "high": 3000, "typical": 1500 },
+      "dropshipping": { "low": 1500, "high": 3000, "typical": 2000 },
+      "instagram_inventory": { "low": 3000, "high": 8000, "typical": 5000 },
+      "marketplace_reseller": { "low": 2000, "high": 5000, "typical": 3000 },
+      "physical_boutique": { "low": 12000, "high": 25000, "typical": 16000 }
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 150, "high": 2000, "typical": 800 },
+    "byModel": {
+      "handmade_instagram_home": {
+        "materials_restocking": 200, "packaging": 50, "marketing": 100, "delivery_labels": 50,
+        "total_range": "300-500",
+        "note": "Variable cost heavy — scales with sales volume. Fixed cost portion is very low."
+      },
+      "dropshipping": { "platform": 5, "domain": 2, "ads": 100, "other": 50, "total_range": "150-200" },
+      "instagram_inventory": { "marketing": 200, "shipping_labels": 100, "other": 50, "total_range": "300-400" },
+      "physical_boutique": {
+        "rent": 800, "utilities": 80, "partTimeStaff": 300, "marketing": 100, "other": 100, "total_range": "1200-1500"
+      }
+    }
+  },
+  "margins": {
+    "grossMargin_pct": { "low": 30, "high": 60, "typical": 40 },
+    "netMargin_pct": { "low": 8, "high": 22, "typical": 12 },
+    "byCategory": {
+      "clothing": { "low": 35, "high": 60, "typical": 48 },
+      "beauty_personalCare": { "low": 50, "high": 70, "typical": 60 },
+      "homeGoods": { "low": 30, "high": 50, "typical": 40 },
+      "handmade_craft": { "low": 55, "high": 75, "typical": 65 },
+      "electronics": { "low": 15, "high": 30, "typical": 22 },
+      "dropshipping": { "low": 15, "high": 25, "typical": 20 }
+    }
+  },
+  "averageOrderValue_JOD": {
+    "clothing": { "low": 15, "high": 80, "typical": 40 },
+    "homeGoods": { "low": 20, "high": 120, "typical": 55 },
+    "beauty": { "low": 10, "high": 60, "typical": 30 },
+    "electronics": { "low": 50, "high": 400, "typical": 150 },
+    "handmadeCraft": { "low": 10, "high": 80, "typical": 25, "giftBundle": 35 },
+    "note": "For handmade sellers, individual item price is 8-20 JOD but gift bundles raise average to 30-50 JOD. AI should use individual item AOV unless bundles are mentioned."
+  },
+  "customerAcquisitionCost_JOD": {
+    "wordOfMouth": { "low": 1, "high": 5, "typical": 3 },
+    "instagramOrganic": { "low": 3, "high": 12, "typical": 7 },
+    "instagramPaidAds": { "low": 10, "high": 40, "typical": 22 },
+    "googleAds": { "low": 15, "high": 50, "typical": 30 },
+    "marketplace": { "low": 15, "high": 40, "typical": 25 }
+  },
+  "monthlyChurnRate_pct": {
+    "low": 15, "high": 45, "typical": 30,
+    "byCategory": {
+      "fashion_decor": "35-45% (one-time purchase behavior)",
+      "beauty_supplements": "10-20% (replenishable, repeat purchases)",
+      "handmade_gifts": "40-50% (highly seasonal, gifting occasions drive repeat)"
+    }
+  },
+  "breakEven_months": {
+    "overall": { "low": 2, "high": 9, "typical": 5 },
+    "byModel": {
+      "handmade_instagram_home": "1-3 months (very low fixed costs)",
+      "dropshipping": "2-4 months",
+      "instagram_inventory": "4-7 months",
+      "physical_boutique": "8-12 months"
+    }
+  },
+  "redFlags": {
+    "grossMarginWarning_pct": 25,
+    "grossMarginDanger_pct": 15,
+    "netMarginDanger_pct": 5,
+    "ltvCacMinimum": 3,
+    "dropshippingWarning": "If gross margin <20% AND CAC >15 JOD — unprofitable model.",
+    "codRefusalBuffer": "Reserve 10-15% of COD revenue for refused deliveries.",
+    "cacWarning_handmade": "If CAC rises above 15 JOD while average order value is under 20 JOD — unsustainable. Shift to organic or bundle pricing."
+  },
+  "jordanContext": {
+    "primaryDiscoveryChannel": "Instagram — 80%+ of online discovery in Amman via social media",
+    "cartAbandonmentRisk": "40%+ abandon if checkout > 3 steps — keep it simple",
+    "logisticsPartners": ["Aramex Jordan", "SMSA", "J&T Express"],
+    "deliveryCost_JOD": { "local_Amman": "2-4", "nationwide": "3-6" },
+    "codDominance": "Cash on delivery is still 70%+ of all orders. Budget for 10-15% refusal rate on COD."
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "_meta": {
+    "lastUpdated": "2026-06-03",
+    "sources": ["Invest Jordan 2025", "GII 2024", "World Bank", "Amman job market surveys 2025"]
+  },
+  "subSectors": [
+    "SaaS / Web App",
+    "Mobile App",
+    "B2B Software (ERP, CRM)",
+    "Accounting / Invoicing Software",
+    "IT Services / Managed Services",
+    "BPO / Outsourcing",
+    "AI & Data Services"
+  ],
+  "marketSize_JOD": {
+    "ictRevenue_USD_2024": "2.9B",
+    "ictRevenue_JOD_approx": "2050M",
+    "bpoRevenue_USD": "130M",
+    "saas_smb_tools_jordan_JOD": "15-25M",
+    "accounting_invoicing_software_jordan_JOD": "8-15M",
+    "mobile_apps_jordan_JOD": "50-80M",
+    "it_services_jordan_JOD": "120-180M",
+    "companies_in_sector_2023": "3000+",
+    "employees_2024": "45000+",
+    "growthTrend": "GROWING",
+    "note": "Invest Jordan 2025: 45,000+ skilled employees, 3,000+ companies. Jordan #2 MENA for mobile app development as % of GDP (GII 2024). Sub-market sizes are estimates based on SME count and digitization rate.",
+    "aiPromptGuidance": "For invoicing or accounting tools use accounting_invoicing_software_jordan_JOD. For SaaS or web apps use saas_smb_tools_jordan_JOD. For mobile apps use mobile_apps_jordan_JOD. For IT services use it_services_jordan_JOD. Only use ictRevenue_JOD_approx for broad ICT market references, never for a single-product startup."
+  },
+  "knownCompetitors": {
+    "accounting_invoicing_saas": [
+      {
+        "name": "Zoho Invoice",
+        "type": "Global SaaS invoicing and accounting tool",
+        "locations": "Online — used by Jordanian SMEs",
+        "targetSegment": "Small businesses and freelancers needing invoicing",
+        "priceRange": "0-25 JOD/month (free tier available)",
+        "mainStrength": "Free tier, Arabic interface, trusted global brand, no setup cost",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Accounting / Invoicing Software", "SaaS / Web App"]
+      },
+      {
+        "name": "Wave Accounting",
+        "type": "Free online accounting and invoicing platform",
+        "locations": "Online — used by Jordanian freelancers",
+        "targetSegment": "Freelancers and micro-businesses",
+        "priceRange": "Free (0 JOD)",
+        "mainStrength": "Completely free, invoicing + bookkeeping combined, no Jordan-specific gap",
+        "threat": "HIGH",
+        "relevantSubSectors": ["Accounting / Invoicing Software"]
+      },
+      {
+        "name": "QuickBooks",
+        "type": "Global accounting software",
+        "locations": "Online — enterprise and mid-market Jordan users",
+        "targetSegment": "SMEs needing full accounting",
+        "priceRange": "35-80 JOD/month",
+        "mainStrength": "Comprehensive accounting suite, accountant integrations, global trust",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["Accounting / Invoicing Software", "B2B Software (ERP, CRM)"]
+      }
+    ],
+    "saas_web_apps": [
+      {
+        "name": "Mawdoo3",
+        "type": "Arabic content platform / SaaS",
+        "locations": "Amman HQ, MENA reach",
+        "targetSegment": "Arabic internet users, content businesses",
+        "priceRange": "B2B contracts — varies",
+        "mainStrength": "Largest Arabic content platform, strong SEO, regional scale",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["SaaS / Web App", "AI & Data Services"]
+      },
+      {
+        "name": "Mahali",
+        "type": "Local services discovery platform",
+        "locations": "Amman",
+        "targetSegment": "SMEs needing local visibility",
+        "priceRange": "20-60 JOD/month",
+        "mainStrength": "First-mover in Jordan local services vertical",
+        "threat": "MEDIUM",
+        "relevantSubSectors": ["SaaS / Web App", "Mobile App"]
+      }
+    ],
+    "it_services": [
+      {
+        "name": "ESKADENIA Software",
+        "type": "Enterprise software solutions",
+        "locations": "Amman, regional clients",
+        "targetSegment": "Insurance, telecom, finance enterprises",
+        "priceRange": "50,000-500,000 JOD projects",
+        "mainStrength": "20+ years in market, deep enterprise relationships",
+        "threat": "LOW",
+        "relevantSubSectors": ["B2B Software (ERP, CRM)", "IT Services / Managed Services"]
+      },
+      {
+        "name": "Reach",
+        "type": "IT services and outsourcing",
+        "locations": "King Hussein Business Park, Amman",
+        "targetSegment": "Regional enterprises",
+        "priceRange": "Project-based, enterprise contracts",
+        "mainStrength": "Strong regional presence, established client base",
+        "threat": "LOW",
+        "relevantSubSectors": ["IT Services / Managed Services", "BPO / Outsourcing"]
+      }
+    ],
+    "mobile_apps": [
+      {
+        "name": "Tamatem",
+        "type": "Mobile gaming studio",
+        "locations": "Amman",
+        "targetSegment": "Arabic mobile gamers",
+        "priceRange": "Free-to-play, in-app purchases",
+        "mainStrength": "Arabic localization expertise, investor-backed, regional reach",
+        "threat": "LOW",
+        "relevantSubSectors": ["Mobile App"]
+      }
+    ]
+  },
+  "marketContext": {
+    "ictShareOfGDP_pct": 4.1,
+    "techStartups_ofEarlyStage_pct": 4,
+    "smes_total_jordan": 180000,
+    "smes_without_digital_tools_pct": 65,
+    "notableLocalStartups": ["Abwaab (EdTech/AI)", "Eon Dental (tele-dentistry)", "Verity (fintech)", "Tamatem (mobile gaming)"],
+    "insight": "Low tech startup saturation — only 4% of early-stage entrepreneurs in tech. 65% of Jordan's 180,000 SMEs still use manual processes. Strong opportunity for Arabic-first SME tools."
+  },
+  "taxIncentives": {
+    "customsDuties_pct": 0,
+    "exportIncomeTax_pct": 0,
+    "ictServicesTax_pct": 0,
+    "localProfitTax_pct": 5,
+    "startupActBenefit": "0% corporate income tax for first 3 years — verify eligibility at JEDCO"
+  },
+  "startupCost_JOD": {
+    "overall": { "low": 3000, "high": 30000, "typical": 10000 },
+    "byModel": {
+      "solo_dev_saas": { "low": 3000, "high": 7000, "typical": 4500 },
+      "small_team_app": { "low": 8000, "high": 20000, "typical": 12000 },
+      "it_services_agency": { "low": 5000, "high": 15000, "typical": 8000 }
+    }
+  },
+  "monthlyFixedCosts_JOD": {
+    "overall": { "low": 500, "high": 4000, "typical": 1500 },
+    "breakdown": {
+      "cloudHosting": { "low": 30, "high": 300 },
+      "softwareLicenses": { "low": 50, "high": 200 },
+      "juniorDeveloper_total": { "monthly": 975, "note": "850 JOD salary + 125 JOD SSC. 2025 Amman market." },
+      "seniorDeveloper_total": { "monthly": 1257, "note": "1100 JOD salary + 157 JOD SSC. 2025 Amman market." },
+      "officeOrCoworking": { "low": 150, "high": 800 },
+      "marketing": { "low": 100, "high": 500 }
+    }
+  },
+  "margins": {
+    "saas": { "grossMargin_pct": { "low": 65, "high": 85, "typical": 75 } },
+    "it_services": { "grossMargin_pct": { "low": 40, "high": 65, "typical": 52 } },
+    "bpo": { "grossMargin_pct": { "low": 30, "high": 50, "typical": 40 } },
+    "netMargin_pct": { "low": 10, "high": 35, "typical": 20 }
+  },
+  "pricingBenchmarks": {
+    "saas_monthly_JOD": { "smb": "15-80", "enterprise": "150-800" },
+    "hourlyDev_JOD": { "junior": "20-35", "mid": "35-60", "senior": "60-100" },
+    "projectBased_JOD": { "mobileApp": "3000-15000", "webApp": "2000-10000", "erp": "5000-25000" }
+  },
+  "saasMetrics": {
+    "monthlyChurn_pct": { "good": "<5", "warning": "5-10", "danger": ">10" },
+    "cacPayback_months": { "good": "<12", "warning": "12-18", "danger": ">18" }
+  },
+  "breakEven_months": { "low": 6, "high": 24, "typical": 14 },
+  "commonRisks": [
+    "Free global tools (Wave, Zoho, QuickBooks) already serve the invoicing/accounting market at zero or near-zero cost — local paid tools must offer clear local differentiation",
+    "Only 4% of Jordanian early-stage entrepreneurs are in tech — thin local buyer pool",
+    "Software piracy reduces local revenue potential",
+    "Brain drain — top talent migrates abroad for higher salaries",
+    "Enterprise clients expect full support from lean startup teams"
+  ],
+  "redFlags": {
+    "monthlyChurnAbove_pct": 10,
+    "cacPaybackAbove_months": 18,
+    "grossMarginBelow_pct": 50,
+    "burnRateWarning": "If monthly burn > 3x MRR — raise or pivot before runway ends"
+  },
+  "jordanContext": {
+    "primaryExportMarket": "Export-ready sector with Arabic language advantage",
+    "ecosystemSupport": ["OASIS500", "JHub (Microsoft)", "Jordan Valley Stars", "USAID Jordan"]
+  }
+}
