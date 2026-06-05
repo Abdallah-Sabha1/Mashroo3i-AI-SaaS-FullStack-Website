@@ -1,194 +1,126 @@
-# Mashroo3i
+<div align="center">
 
-Mashroo3i is an AI-powered entrepreneurship platform built to help entrepreneurs transform ideas into actionable business opportunities. By combining artificial intelligence, market intelligence, financial forecasting, and strategic analysis, Mashroo3i provides everything needed to evaluate, validate, and refine startup ideas in one powerful platform.
+![Mashroo3i Logo](https://github.com/Abdallah-Sabha1/Mashroo3i-AI-SaaS-FullStack-Website/raw/main/Frontend/public/logo1%20green%20%26%20black.svg)
 
-Whether you're launching your first startup or exploring your next business opportunity, Mashroo3i helps you make smarter decisions faster through automated insights and data-driven recommendations.
+# Mashroo3i — مشروعي
+
+**Your AI co-founder for the Jordanian market**
+
+[![ASP.NET Core](https://img.shields.io/badge/ASP.NET%20Core-10.0-512BD4?style=flat-square&logo=dotnet)](https://dotnet.microsoft.com/)
+[![React](https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react)](https://react.dev/)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Supabase-4169E1?style=flat-square&logo=postgresql)](https://supabase.com/)
+
+</div>
+
+---
 
 ## Overview
 
-Starting a business is exciting, but validating an idea can be challenging. Entrepreneurs often struggle with:
+Most business ideas fail not because they're bad — but because founders never stress-tested them before spending money.
 
-* Determining whether an idea has real market potential
-* Understanding competitors and market conditions
-* Estimating startup costs and financial viability
-* Identifying risks before investing time and money
-* Creating structured plans for growth and execution
+Mashroo3i gives Jordanian entrepreneurs an honest, data-grounded answer to one question: *is this idea worth pursuing?* You describe your idea, and the platform returns a full investment-grade report — scoring across five dimensions, a SWOT breakdown, competitive positioning, market sizing, and a 12-month financial model — all calibrated to Jordan's economy, not some generic global dataset.
 
-Mashroo3i simplifies this process by leveraging AI to analyze business ideas, generate strategic insights, evaluate risks, and provide financial projections that help entrepreneurs move forward with confidence.
+It's not a chatbot. It's a structured evaluation workflow with a credit-based business model, user accounts, and persistent results — built to be a real product.
 
 ---
 
-## Features
+## The Platform
 
-### AI-Powered Idea Evaluation
+### Landing Page
 
-* Business idea scoring and assessment
-* Novelty evaluation
-* Market potential analysis
-* Risk assessment
-* AI-generated recommendations
+![Hero](screenshots/landing-hero.png)
 
-### SWOT Analysis
+![Problem](screenshots/landing-problem.png)
 
-* Strengths identification
-* Weaknesses analysis
-* Opportunity discovery
-* Threat assessment
-* Overall risk classification
+![How It Works](screenshots/landing-how-it-works.png)
 
-### Market & Competitor Analysis
+![Principles](screenshots/landing-principles.png)
 
-* Market size estimation
-* Market trend analysis
-* Competitor identification
-* Saturation level assessment
-* Growth opportunity detection
-* Differentiation analysis
+![CTA](screenshots/landing-cta.png)
+
+![Footer](screenshots/landing-footer.png)
+
+---
+
+### AI Evaluation Report
+
+Submit your idea and get back a scored, structured report across four tabs — AI Evaluation, SWOT & Risk, Market, and Financial Projections.
+
+**Scoring & Recommendations**
+
+![Evaluation Score](screenshots/evaluation-score.jpeg)
+
+**SWOT & Risk Analysis**
+
+![SWOT Analysis](screenshots/evaluation-swot.jpeg)
+
+**Market Analysis**
+
+![Market Analysis](screenshots/evaluation-market.jpeg)
+
+---
 
 ### Financial Projections
 
-* Startup cost estimation
-* Revenue forecasting
-* Operating cost calculation
-* Break-even analysis
-* ROI estimation
-* AI-generated financial insights
+An interactive 3-step financial model. Dial in your costs, revenue assumptions, and growth rate — then see your full Year 1 P&L, break-even month, and ROI.
 
-### User Management
+**Step 1 — Investment Setup**
 
-* Secure authentication
-* User profile management
-* Business idea management
-* Credit-based evaluation system
+![Investment Setup](screenshots/financial-investment.jpeg)
 
----
+**Step 2 — Revenue Model**
 
-## Why Mashroo3i?
+![Revenue Model](screenshots/financial-revenue.jpeg)
 
-✅ Save hours of manual research with AI-powered analysis.
+**Step 3 — Results**
 
-✅ Validate business ideas before investing significant resources.
+![Financial Results](screenshots/financial-results.jpeg)
 
-✅ Gain valuable market and competitor insights instantly.
+**AI Insights**
 
-✅ Understand financial feasibility through automated projections.
-
-✅ Make informed entrepreneurial decisions backed by data.
-
-✅ Access a complete startup evaluation workflow from a single platform.
+![AI Insights](screenshots/financial-insights.jpeg)
 
 ---
 
-## Technology Stack
+## Key Capabilities
 
-### Frontend
+**For the entrepreneur**
+- Submit a business idea and receive a scored, written evaluation within minutes
+- Understand strengths, risks, and market position before committing any capital
+- Build and adjust a financial model interactively — see break-even, revenue curve, and ROI update in real time
+- Get AI-generated financial insights benchmarked against Jordanian SME norms
 
-* React.js
-* Tailwind CSS
-* JavaScript
-
-### Backend
-
-* ASP.NET Core Web API
-* Entity Framework Core
-
-### Database
-
-* PostgreSQL
-
-### AI Integration
-
-* Claude AI API
-
-### Authentication & Security
-
-* JWT Authentication
-* BCrypt Password Hashing
-
-### Version Control
-
-* Git
-* GitHub
+**For the business**
+- Credit-based monetization — users pay per evaluation, not a flat subscription
+- Persistent user accounts with evaluation history and financial plans
+- Built to scale: stateless API, managed database, containerized deployment
 
 ---
 
-## System Architecture
+## Technology
 
-The platform follows a modern client-server architecture:
-
-```text
-React Frontend
-       │
-       ▼
-ASP.NET Core API
-       │
-       ├── PostgreSQL Database
-       │
-       └── Claude AI API
-```
-
-### Evaluation Pipeline
-
-1. User submits a business idea.
-2. System validates and stores the idea.
-3. User requests an evaluation using available credits.
-4. Background evaluation process is started.
-5. AI generates:
-
-   * Evaluation Score
-   * SWOT Analysis
-   * Risk Assessment
-   * Market Analysis
-6. Results are stored in the database.
-7. Frontend retrieves and displays completed reports.
+| | |
+|---|---|
+| **Backend** | ASP.NET Core — handles the API, authentication, and orchestrates the AI evaluation pipeline |
+| **Frontend** | React — single-page application with full Arabic/English support |
+| **Database** | PostgreSQL via Supabase — stores users, ideas, evaluations, and payment records |
+| **AI** | Groq (Llama 3.3 70B) — powers the evaluation, SWOT, market analysis, and financial insights |
+| **Deployment** | Railway for the backend, Netlify for the frontend |
 
 ---
 
-## Core Modules
+## Deployment
 
-### Authentication Module
-
-* Registration
-* Login
-* JWT token generation
-* Session management
-
-### Idea Management Module
-
-* Create business ideas
-* View submitted ideas
-* Delete ideas
-* Track evaluation status
-
-### Evaluation Module
-
-* AI-powered scoring
-* Novelty assessment
-* Strategic recommendations
-
-### Market Analysis Module
-
-* Market landscape analysis
-* Competitor profiling
-* Market saturation evaluation
-* Growth opportunities
-
-### Financial Projection Module
-
-* Revenue forecasting
-* Cost analysis
-* Profit projections
-* Break-even calculations
-
-### Credit System
-
-* Credit balance management
-* Evaluation credit consumption
-* Credit package purchasing
+See the [Deploy branch](https://github.com/Abdallah-Sabha1/Mashroo3i-AI-SaaS-FullStack-Website/tree/Deploy) for production configuration.
 
 ---
 
+## License
 
-## About the Project
+MIT
 
-Mashroo3i was created with a clear mission: to make professional business evaluation and startup planning accessible to every entrepreneur. By combining modern web technologies with artificial intelligence, the platform empowers innovators to turn ideas into opportunities and opportunities into successful ventures.
+---
+
+<div align="center">
+Built in Jordan 🇯🇴 — for Jordanian entrepreneurs
+</div>
