@@ -52,7 +52,7 @@ namespace Mashroo3i.Services
             };
 
             var json = JsonSerializer.Serialize(requestBody);
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            using var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             _logger.LogInformation("[{Provider}] POST {Url} | {Length} chars",
                 ProviderName, _completionsUrl, prompt.Length);
@@ -62,6 +62,11 @@ namespace Mashroo3i.Services
             {
                 response = await _http.PostAsync(_completionsUrl, content, ct);
             }
+            catch (OperationCanceledException) when (ct.IsCancellationRequested)
+            {
+                _logger.LogInformation("[{Provider}] Request was cancelled", ProviderName);
+                throw;
+            }
             catch (Exception ex)
             {
                 _logger.LogError(ex, "[{Provider}] Connection failed to {Url}", ProviderName, _completionsUrl);
@@ -69,24 +74,27 @@ namespace Mashroo3i.Services
                     $"{ProviderName}: connection failed — {ex.GetType().Name}: {ex.Message}", ex);
             }
 
-            if (!response.IsSuccessStatusCode)
+            using (response)
             {
-                var errorBody = await response.Content.ReadAsStringAsync(ct);
-                _logger.LogError("[{Provider}] HTTP {Status}: {Body}", ProviderName, (int)response.StatusCode, errorBody);
-                throw new HttpRequestException(
-                    $"{ProviderName} returned HTTP {(int)response.StatusCode}: {errorBody}");
+                if (!response.IsSuccessStatusCode)
+                {
+                    var errorBody = await response.Content.ReadAsStringAsync(ct);
+                    _logger.LogError("[{Provider}] HTTP {Status}: {Body}", ProviderName, (int)response.StatusCode, errorBody);
+                    throw new HttpRequestException(
+                        $"{ProviderName} returned HTTP {(int)response.StatusCode}: {errorBody}");
+                }
+
+                var responseJson = await response.Content.ReadAsStringAsync(ct);
+                using var doc = JsonDocument.Parse(responseJson);
+
+                var text = doc.RootElement
+                    .GetProperty("choices")[0]
+                    .GetProperty("message")
+                    .GetProperty("content")
+                    .GetString();
+
+                return text ?? string.Empty;
             }
-
-            var responseJson = await response.Content.ReadAsStringAsync(ct);
-            using var doc = JsonDocument.Parse(responseJson);
-
-            var text = doc.RootElement
-                .GetProperty("choices")[0]
-                .GetProperty("message")
-                .GetProperty("content")
-                .GetString();
-
-            return text ?? string.Empty;
         }
 
         public async Task<T> GenerateJsonAsync<T>(string prompt, CancellationToken ct = default) where T : class
