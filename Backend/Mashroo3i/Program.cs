@@ -21,11 +21,23 @@ builder.Services.AddSingleton<IAIService>(sp =>
 {
     var config = sp.GetRequiredService<IConfiguration>();
     var active = config["AIProvider:Active"] ?? "Groq";
+    var providerSection = $"AIProvider:{active}";
+
+    string GetRequiredSetting(string name)
+    {
+        var key = $"{providerSection}:{name}";
+        var value = config[key];
+        return !string.IsNullOrWhiteSpace(value)
+            ? value
+            : throw new InvalidOperationException(
+                $"Required configuration '{key}' is missing. Add it to appsettings.Development.json or environment variables.");
+    }
+
     var settings = new ProviderSettings
     {
-        ApiKey = config[$"AIProvider:{active}:ApiKey"]!,
-        Model = config[$"AIProvider:{active}:Model"]!,
-        BaseUrl = config[$"AIProvider:{active}:BaseUrl"]!,
+        ApiKey = GetRequiredSetting("ApiKey"),
+        Model = GetRequiredSetting("Model"),
+        BaseUrl = GetRequiredSetting("BaseUrl"),
     };
     return new OpenAICompatibleAIService(
         sp.GetRequiredService<IHttpClientFactory>(),
@@ -36,7 +48,20 @@ builder.Services.AddSingleton<IAIService>(sp =>
 
 builder.Services.AddScoped<BusinessIdeaService>();
 builder.Services.AddScoped<EvaluationService>();
+builder.Services.AddSingleton<EvaluationBackgroundRunner>();
 builder.Services.AddScoped<IFakePaymentProvider, FakePaymentProvider>();
+
+string GetRequiredConfiguration(string key)
+{
+    var value = builder.Configuration[key];
+    return !string.IsNullOrWhiteSpace(value)
+        ? value
+        : throw new InvalidOperationException($"Required configuration '{key}' is missing.");
+}
+
+var jwtKey = GetRequiredConfiguration("Jwt:Key");
+var jwtIssuer = GetRequiredConfiguration("Jwt:Issuer");
+var jwtAudience = GetRequiredConfiguration("Jwt:Audience");
 
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
@@ -47,10 +72,10 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            ValidIssuer = builder.Configuration["Jwt:Issuer"],
-            ValidAudience = builder.Configuration["Jwt:Audience"],
+            ValidIssuer = jwtIssuer,
+            ValidAudience = jwtAudience,
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!)),
+                Encoding.UTF8.GetBytes(jwtKey)),
             ClockSkew = TimeSpan.Zero,
         };
     });

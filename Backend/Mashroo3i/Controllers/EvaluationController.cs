@@ -15,17 +15,14 @@ namespace Mashroo3i.Controllers
     public class EvaluationController : ControllerBase
     {
         private readonly AppDbContext _db;
-        private readonly IServiceScopeFactory _scopeFactory;
-        private readonly ILogger<EvaluationController> _logger;
+        private readonly EvaluationBackgroundRunner _backgroundRunner;
 
         public EvaluationController(
             AppDbContext db,
-            IServiceScopeFactory scopeFactory,
-            ILogger<EvaluationController> logger)
+            EvaluationBackgroundRunner backgroundRunner)
         {
             _db = db;
-            _scopeFactory = scopeFactory;
-            _logger = logger;
+            _backgroundRunner = backgroundRunner;
         }
 
         // POST /api/evaluation/{ideaId}/start
@@ -100,28 +97,7 @@ namespace Mashroo3i.Controllers
 
             await transaction.CommitAsync(cancellationToken);
 
-            // ── Step 3: Fire-and-forget with a fresh DI scope ─────────────────
-            // On failure, EvaluateAsync marks status = "failed" and we refund the credit.
-            _ = Task.Run(async () =>
-            {
-                await using var scope = _scopeFactory.CreateAsyncScope();
-                var evalService = scope.ServiceProvider.GetRequiredService<EvaluationService>();
-                var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-                try
-                {
-                    await evalService.EvaluateAsync(ideaId);
-                }
-                catch (Exception ex)
-                {
-                    _logger.LogError(ex, "Background evaluation failed for idea {IdeaId} — refunding credit", ideaId);
-
-                    // Refund the credit since evaluation didn't complete.
-                    await db.Users
-                        .Where(u => u.Id == userId.Value)
-                        .ExecuteUpdateAsync(s =>
-                            s.SetProperty(u => u.EvaluationCredits, u => u.EvaluationCredits + 1));
-                }
-            });
+            _backgroundRunner.Start(ideaId, userId.Value);
 
             return Accepted(new
             {
