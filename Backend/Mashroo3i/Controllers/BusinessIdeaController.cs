@@ -32,11 +32,11 @@ namespace Mashroo3i.Controllers
 
             var idea = await _service.CreateAsync(dto, userId.Value);
 
-            return CreatedAtAction(nameof(GetById), new { id = idea.IdeaId }, new
+            return CreatedAtAction(nameof(GetById), new { id = idea.IdeaId }, new BusinessIdeaCreatedDto
             {
-                idea.IdeaId,
-                idea.Title,
-                idea.Status
+                IdeaId = idea.IdeaId,
+                Title = idea.Title,
+                Status = idea.Status
             });
         }
 
@@ -50,14 +50,14 @@ namespace Mashroo3i.Controllers
             var ideas = await _db.BusinessIdeas
                 .Where(i => i.UserId == userId.Value)
                 .OrderByDescending(i => i.CreatedAt)
-                .Select(i => new
+                .Select(i => new BusinessIdeaSummaryDto
                 {
-                    i.IdeaId,
-                    i.Title,
-                    i.Sector,
-                    i.EstimatedBudget,
-                    i.Status,
-                    i.CreatedAt,
+                    IdeaId = i.IdeaId,
+                    Title = i.Title,
+                    Sector = i.Sector,
+                    EstimatedBudget = i.EstimatedBudget,
+                    Status = i.Status,
+                    CreatedAt = i.CreatedAt,
                     OverallScore = i.EvaluationScores != null ? (int?)i.EvaluationScores.OverallScore : null,
                     Verdict = i.EvaluationScores != null ? i.EvaluationScores.Verdict : null,
                 })
