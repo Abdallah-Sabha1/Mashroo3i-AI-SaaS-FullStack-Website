@@ -1,20 +1,10 @@
 ﻿using Mashroo3i.Enums;
 
+using Mashroo3i.Interfaces;
+using Mashroo3i.Models;
+
 namespace Mashroo3i.Services
 {
-    // ── Result returned by the provider ──────────────────────────────────
-    public record PaymentResult(
-        PaymentStatus Status,
-        string TransactionRef,
-        string? ErrorMessage = null
-    );
-
-    // ── Interface ─────────────────────────────────────────────────────────
-    public interface IFakePaymentProvider
-    {
-        PaymentResult Charge(string cardNumber, decimal amount, string currency);
-    }
-
     // ── Implementation ────────────────────────────────────────────────────
     /// <summary>
     /// Simulates a payment gateway for demo/university purposes.
