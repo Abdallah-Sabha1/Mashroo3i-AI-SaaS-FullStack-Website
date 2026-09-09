@@ -1,4 +1,5 @@
 using Mashroo3i.Data;
+using Mashroo3i.DTOs.FinancialPlan;
 using Mashroo3i.Interfaces;
 using Mashroo3i.Models;
 using Mashroo3i.Services.AI;
@@ -184,37 +185,4 @@ namespace Mashroo3i.Controllers
         }
     }
 
-    public class SaveFinancialPlanDto
-    {
-        public decimal CapEx { get; set; }
-        public decimal OpEx { get; set; }
-        public decimal TicketSize { get; set; }
-        public decimal CustomersPerMonth { get; set; }
-        public decimal GrossMargin { get; set; }
-        public decimal MonthlyGrowth { get; set; }
-    }
-
-    public class InsightsRequestDto
-    {
-        public string SectorLabel { get; set; } = string.Empty;
-        public decimal CapEx { get; set; }
-        public decimal OpEx { get; set; }
-        public decimal Ticket { get; set; }
-        public decimal Customers { get; set; }
-        public decimal Margin { get; set; }
-        public decimal Growth { get; set; }
-        public decimal Year1Revenue { get; set; }
-        public decimal Year1Profit { get; set; }
-        public decimal Year1Cogs { get; set; }
-        public decimal Year1Opex { get; set; }
-        public decimal Roi { get; set; }
-        public int? BreakEvenMonth { get; set; }
-    }
-
-    public class InsightItem
-    {
-        public string Tone { get; set; } = "info";
-        public string Title { get; set; } = string.Empty;
-        public string Body { get; set; } = string.Empty;
-    }
 }
