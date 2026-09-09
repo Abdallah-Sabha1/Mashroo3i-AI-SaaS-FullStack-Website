@@ -4,7 +4,6 @@ using Mashroo3i.Models;
 using Mashroo3i.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 
 namespace Mashroo3i.Controllers
@@ -15,12 +14,9 @@ namespace Mashroo3i.Controllers
     public class BusinessIdeaController : ControllerBase
     {
         private readonly BusinessIdeaService _service;
-        private readonly AppDbContext _db;
-
-        public BusinessIdeaController(BusinessIdeaService service, AppDbContext db)
+        public BusinessIdeaController(BusinessIdeaService service)
         {
             _service = service;
-            _db = db;
         }
 
         // POST /api/business-idea
@@ -47,21 +43,7 @@ namespace Mashroo3i.Controllers
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
-            var ideas = await _db.BusinessIdeas
-                .Where(i => i.UserId == userId.Value)
-                .OrderByDescending(i => i.CreatedAt)
-                .Select(i => new BusinessIdeaSummaryDto
-                {
-                    IdeaId = i.IdeaId,
-                    Title = i.Title,
-                    Sector = i.Sector,
-                    EstimatedBudget = i.EstimatedBudget,
-                    Status = i.Status,
-                    CreatedAt = i.CreatedAt,
-                    OverallScore = i.EvaluationScores != null ? (int?)i.EvaluationScores.OverallScore : null,
-                    Verdict = i.EvaluationScores != null ? i.EvaluationScores.Verdict : null,
-                })
-                .ToListAsync();
+            var ideas = await _service.GetAllAsync(userId.Value);
 
             return Ok(ideas);
         }
@@ -73,8 +55,7 @@ namespace Mashroo3i.Controllers
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
-            var idea = await _db.BusinessIdeas
-                .FirstOrDefaultAsync(i => i.IdeaId == id && i.UserId == userId.Value);
+            var idea = await _service.GetByIdAsync(id, userId.Value);
 
             if (idea == null) return NotFound();
 
@@ -88,16 +69,13 @@ namespace Mashroo3i.Controllers
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
-            var idea = await _db.BusinessIdeas
-                .FirstOrDefaultAsync(i => i.IdeaId == id && i.UserId == userId.Value);
+            var result = await _service.DeleteAsync(id, userId.Value);
 
-            if (idea == null) return NotFound(new { message = "Idea not found." });
+            if (result == BusinessIdeaDeleteResult.NotFound)
+                return NotFound(new { message = "Idea not found." });
 
-            if (idea.Status == BusinessIdea.StatusAnalyzing)
+            if (result == BusinessIdeaDeleteResult.Analyzing)
                 return Conflict(new { message = "Cannot delete an idea while it is being analyzed. Wait for evaluation to finish." });
-
-            _db.BusinessIdeas.Remove(idea);
-            await _db.SaveChangesAsync();
 
             return NoContent(); // 204
         }
