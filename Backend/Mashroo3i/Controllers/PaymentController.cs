@@ -82,12 +82,12 @@ namespace Mashroo3i.Controllers
             user.EvaluationCredits += pack.Credits;
             await _db.SaveChangesAsync(cancellationToken);
 
-            return Ok(new
+            return Ok(new PurchaseCreditsResponseDto
             {
-                message = $"{pack.Credits} evaluation credit{(pack.Credits > 1 ? "s" : "")} added to your account.",
-                creditsAdded = pack.Credits,
-                totalCredits = user.EvaluationCredits,
-                transactionRef = paymentResult.TransactionRef,
+                Message = $"{pack.Credits} evaluation credit{(pack.Credits > 1 ? "s" : "")} added to your account.",
+                CreditsAdded = pack.Credits,
+                TotalCredits = user.EvaluationCredits,
+                TransactionRef = paymentResult.TransactionRef,
             });
         }
 

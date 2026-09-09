@@ -82,15 +82,15 @@ namespace Mashroo3i.Controllers
 
             if (user == null) return NotFound();
 
-            return Ok(new
+            return Ok(new UserProfileDto
             {
-                user.FullName,
-                user.Email,
-                user.Role,
-                user.Education,
-                user.Experience,
-                user.BusinessInterest,
-                user.CreatedAt,
+                FullName = user.FullName,
+                Email = user.Email,
+                Role = user.Role,
+                Education = user.Education,
+                Experience = user.Experience,
+                BusinessInterest = user.BusinessInterest,
+                CreatedAt = user.CreatedAt,
             });
         }
     }

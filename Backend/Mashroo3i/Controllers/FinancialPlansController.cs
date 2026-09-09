@@ -39,18 +39,18 @@ namespace Mashroo3i.Controllers
                 .FirstOrDefaultAsync(f => f.IdeaId == ideaId, cancellationToken);
             if (plan == null) return NotFound(new { message = "No financial plan saved yet." });
 
-            return Ok(new
+            return Ok(new FinancialPlanDto
             {
-                plan.PlanId,
-                plan.IdeaId,
-                plan.InitialInvestment,
-                plan.MonthlyCosts,
-                plan.TicketSize,
-                plan.CustomersPerMonth,
-                plan.GrossMarginPct,
-                plan.MonthlyGrowthRate,
-                plan.CreatedAt,
-                idea.EstimatedBudget,
+                PlanId = plan.PlanId,
+                IdeaId = plan.IdeaId,
+                InitialInvestment = plan.InitialInvestment,
+                MonthlyCosts = plan.MonthlyCosts,
+                TicketSize = plan.TicketSize,
+                CustomersPerMonth = plan.CustomersPerMonth,
+                GrossMarginPct = plan.GrossMarginPct,
+                MonthlyGrowthRate = plan.MonthlyGrowthRate,
+                CreatedAt = plan.CreatedAt,
+                EstimatedBudget = idea.EstimatedBudget,
             });
         }
 
