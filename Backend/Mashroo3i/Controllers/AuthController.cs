@@ -23,9 +23,9 @@ namespace Mashroo3i.Controllers
         }
 
         [HttpPost("register")]
-        public async Task<IActionResult> Register(RegisterDto dto)
+        public async Task<IActionResult> Register(RegisterDto dto, CancellationToken cancellationToken)
         {
-            if (await _db.Users.AnyAsync(u => u.Email == dto.Email.ToLower()))
+            if (await _db.Users.AnyAsync(u => u.Email == dto.Email.ToLower(), cancellationToken))
                 return BadRequest(new { message = "Email already in use." });
 
             var user = new User
@@ -40,16 +40,16 @@ namespace Mashroo3i.Controllers
             };
 
             _db.Users.Add(user);
-            await _db.SaveChangesAsync();
+            await _db.SaveChangesAsync(cancellationToken);
 
             return Ok(new { message = "Registered successfully." });
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> Login(LoginDto dto)
+        public async Task<IActionResult> Login(LoginDto dto, CancellationToken cancellationToken)
         {
             var user = await _db.Users
-                .FirstOrDefaultAsync(u => u.Email == dto.Email.ToLower());
+                .FirstOrDefaultAsync(u => u.Email == dto.Email.ToLower(), cancellationToken);
 
             if (user == null || !BCrypt.Net.BCrypt.Verify(dto.Password, user.PasswordHash))
                 return Unauthorized(new { message = "Invalid credentials." });
@@ -70,7 +70,7 @@ namespace Mashroo3i.Controllers
         // GET /api/auth/me  — returns the full profile of the currently logged-in user
         [HttpGet("me")]
         [Authorize]
-        public async Task<IActionResult> Me()
+        public async Task<IActionResult> Me(CancellationToken cancellationToken)
         {
             var claim = User.FindFirstValue(ClaimTypes.NameIdentifier);
             if (!Guid.TryParse(claim, out var userId))
@@ -78,7 +78,7 @@ namespace Mashroo3i.Controllers
 
             var user = await _db.Users
                 .AsNoTracking()
-                .FirstOrDefaultAsync(u => u.Id == userId);
+                .FirstOrDefaultAsync(u => u.Id == userId, cancellationToken);
 
             if (user == null) return NotFound();
 
