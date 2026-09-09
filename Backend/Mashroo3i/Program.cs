@@ -47,6 +47,7 @@ builder.Services.AddSingleton<IAIService>(sp =>
 });
 
 builder.Services.AddScoped<BusinessIdeaService>();
+builder.Services.AddSingleton<EvaluationReferenceData>();
 builder.Services.AddScoped<EvaluationService>();
 builder.Services.AddSingleton<EvaluationBackgroundRunner>();
 builder.Services.AddScoped<IFakePaymentProvider, FakePaymentProvider>();

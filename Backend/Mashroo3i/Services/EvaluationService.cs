@@ -1,5 +1,4 @@
 using System.Text.Json;
-using System.Text.Json.Nodes;
 using Mashroo3i.Data;
 using Mashroo3i.Models;
 using Mashroo3i.Services.AI;
@@ -11,24 +10,14 @@ namespace Mashroo3i.Services
     {
         private readonly AppDbContext _db;
         private readonly IAIService _ai;
-        private readonly IWebHostEnvironment _env;
+        private readonly EvaluationReferenceData _referenceData;
         private readonly ILogger<EvaluationService> _logger;
-
-        // FIX #6: Removed "notes", "subSectors" — these must reach the AI.
-        // Kept only true noise: metadata, labels, units, version info.
-        // "aiPromptGuidance" and "relevantSubSectors" are intentionally NOT in this list.
-        private static readonly HashSet<string> _noiseKeys = new(StringComparer.OrdinalIgnoreCase)
-        {
-            "_meta", "label", "labelAr", "examplesAmman",
-            "unit", "confidence", "sources", "purpose", "version",
-            "lastUpdated", "file", "sectorKey", "message",
-        };
 
         public EvaluationService(
             AppDbContext db, IAIService ai,
-            IWebHostEnvironment env, ILogger<EvaluationService> logger)
+            EvaluationReferenceData referenceData, ILogger<EvaluationService> logger)
         {
-            _db = db; _ai = ai; _env = env; _logger = logger;
+            _db = db; _ai = ai; _referenceData = referenceData; _logger = logger;
         }
 
         public async Task EvaluateAsync(Guid ideaId, CancellationToken ct = default)
@@ -53,21 +42,15 @@ namespace Mashroo3i.Services
                 return;
             }
 
-            var economy = CompressJson(LoadJson("shared", "jordan_economy_snapshot.json"));
-            var redFlags = CompressJson(LoadJson("shared", "red_flag_rules.json"));
-            var channels = CompressJson(LoadJson("shared", "acquisition_channels.json"));
-
-            var sectorFile = ResolveSectorFile(idea.Sector);
-            var sector = sectorFile != null ? CompressJson(LoadJson("sectors", sectorFile)) : null;
-
-            var sharedCtx = BuildSharedContext(idea, economy, sector);
+            var referenceData = _referenceData.Load(idea);
+            var sharedCtx = BuildSharedContext(idea, referenceData.Economy, referenceData.Sector);
 
             try
             {
                 _logger.LogInformation("Starting parallel AI evaluation for idea {IdeaId} | sector: {Sector}", ideaId, idea.Sector);
 
                 var scoringTask = _ai.GenerateJsonAsync<ScoreAiResponse>(
-                    BuildScoringPrompt(sharedCtx, redFlags, channels), ct);
+                    BuildScoringPrompt(sharedCtx, referenceData.RedFlags, referenceData.Channels), ct);
 
                 var swotTask = _ai.GenerateJsonAsync<SwotAiResponse>(
                     BuildSwotPrompt(sharedCtx), ct);
@@ -389,119 +372,7 @@ namespace Mashroo3i.Services
         """;
         }
 
-        // FIX #3: Added more keyword mappings for natural user input
-        private static string? ResolveSectorFile(string sector) => sector.ToLower() switch
-        {
-            "tech" or "software" or "tech_software" or "saas" or "app" or "it" => "tech_software.json",
-            "food" or "fnb" or "food_and_beverage" or "cafe" or "restaurant" or "coffee" or "catering" or "kitchen" => "food_and_beverage.json",
-            "health" or "wellness" or "health_wellness" or "fitness" or "gym" or "medical" or "beauty" or "salon" => "health_wellness.json",
-            "education" or "edtech" or "education_training" or "tutoring" or "training" or "school" or "courses" => "education_training.json",
-            "professional" or "services" or "professional_services" or "freelance" or "agency" or "consulting" or "design" => "professional_services.json",
-            "retail" or "ecommerce" or "retail_ecommerce" or "shop" or "store" or "handmade" or "fashion" or "ecommerce" => "retail_ecommerce.json",
-            _ => null,
-        };
-
-        private string LoadJson(string folder, string fileName)
-        {
-            var path = Path.Combine(_env.ContentRootPath, "Data", folder, fileName);
-            if (!File.Exists(path))
-            {
-                _logger.LogWarning("Data file not found: {Path}", path);
-                return "{}";
-            }
-            return File.ReadAllText(path);
-        }
-
-        private static string CompressJson(string json)
-        {
-            try
-            {
-                var node = JsonNode.Parse(json);
-                if (node == null) return json;
-                StripNoise(node);
-                return node.ToJsonString(new JsonSerializerOptions { WriteIndented = false });
-            }
-            catch { return json; }
-        }
-
-        private static void StripNoise(JsonNode node)
-        {
-            if (node is JsonObject obj)
-            {
-                var toRemove = obj.Select(kvp => kvp.Key)
-                    .Where(k => _noiseKeys.Contains(k)).ToList();
-                foreach (var key in toRemove) obj.Remove(key);
-                foreach (var child in obj) StripNoise(child.Value!);
-            }
-            else if (node is JsonArray arr)
-            {
-                foreach (var item in arr)
-                    if (item != null) StripNoise(item);
-            }
-        }
-
         private static int Clamp(int v) => Math.Clamp(v, 0, 100);
 
-        private class ScoreAiResponse
-        {
-            public int OverallScore { get; set; }
-            public int MarketScore { get; set; }
-            public int FinancialScore { get; set; }
-            public int ExecutionScore { get; set; }
-            public int InnovationScore { get; set; }
-            public string? Verdict { get; set; }
-            public string? Summary { get; set; }
-            public List<string>? Strengths { get; set; }
-            public List<string>? Concerns { get; set; }
-            public List<string>? Recommendations { get; set; }
-        }
-
-        private class RiskItem
-        {
-            public string Title { get; set; } = string.Empty;
-            public string Description { get; set; } = string.Empty;
-            public string Mitigation { get; set; } = string.Empty;
-        }
-
-        private class SwotAiResponse
-        {
-            public string? Strengths { get; set; }
-            public string? Weaknesses { get; set; }
-            public string? Opportunities { get; set; }
-            public string? Threats { get; set; }
-            public List<RiskItem>? Risks { get; set; }
-            public string? OverallRiskLevel { get; set; }
-        }
-
-        private class MarketAiResponse
-        {
-            public string? FatalFlaw { get; set; }
-            public string? CompetitorAnalysis { get; set; }
-            public string? LikelyFailureMode { get; set; }
-            public string? MarketSize { get; set; }
-            public string? Saturation { get; set; }
-            public List<CompetitorItem>? Competitors { get; set; }
-            public List<OpportunityItem>? MarketOpportunities { get; set; }
-            public string? MarketTrend { get; set; }
-            public string? MarketTrendReason { get; set; }
-            public string? DifferentiationAnalysis { get; set; }
-        }
-
-        private class CompetitorItem
-        {
-            public string Name { get; set; } = string.Empty;
-            public string Description { get; set; } = string.Empty;
-            public string Threat { get; set; } = string.Empty;
-            public string PriceRange { get; set; } = string.Empty;
-            public string TargetSegment { get; set; } = string.Empty;
-            public string MainStrength { get; set; } = string.Empty;
-        }
-
-        private class OpportunityItem
-        {
-            public string Title { get; set; } = string.Empty;
-            public string Description { get; set; } = string.Empty;
-            public string Benefit { get; set; } = string.Empty;
-        }
     }
 }
