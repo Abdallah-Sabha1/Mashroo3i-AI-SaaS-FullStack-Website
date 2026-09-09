@@ -172,6 +172,10 @@ namespace Mashroo3i.Controllers
 
                 return Ok(result);
             }
+            catch (OperationCanceledException) when (cancellationToken.IsCancellationRequested)
+            {
+                throw;
+            }
             catch
             {
                 return Ok(new List<InsightItem>());

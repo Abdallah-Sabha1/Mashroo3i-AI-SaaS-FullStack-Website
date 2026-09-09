@@ -32,23 +32,26 @@ namespace Mashroo3i.Controllers
         // Kicks off the evaluation in the background, returns 202 immediately.
         // Client polls GET /results until status is "completed" or "failed".
         [HttpPost("{ideaId:guid}/start")]
-        public async Task<IActionResult> Start(Guid ideaId)
+        public async Task<IActionResult> Start(Guid ideaId, CancellationToken cancellationToken)
         {
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
+
+            await using var transaction = await _db.Database.BeginTransactionAsync(cancellationToken);
 
             // ── Step 1: Atomic credit deduction ──────────────────────────────
             // Single UPDATE WHERE Credits > 0 — eliminates the TOCTOU window
             // between reading credits and deducting them.
             var creditRows = await _db.Users
                 .Where(u => u.Id == userId.Value && u.EvaluationCredits > 0)
-                .ExecuteUpdateAsync(s =>
-                    s.SetProperty(u => u.EvaluationCredits, u => u.EvaluationCredits - 1));
+                .ExecuteUpdateAsync(
+                    s => s.SetProperty(u => u.EvaluationCredits, u => u.EvaluationCredits - 1),
+                    cancellationToken);
 
             if (creditRows == 0)
             {
                 // Either user doesn't exist or has no credits.
-                var userExists = await _db.Users.AnyAsync(u => u.Id == userId.Value);
+                var userExists = await _db.Users.AnyAsync(u => u.Id == userId.Value, cancellationToken);
                 if (!userExists) return Unauthorized();
 
                 return BadRequest(new
@@ -66,19 +69,25 @@ namespace Mashroo3i.Controllers
                 .Where(i => i.IdeaId == ideaId
                          && i.UserId == userId.Value
                          && i.Status == BusinessIdea.StatusSubmitted)
-                .ExecuteUpdateAsync(s =>
-                    s.SetProperty(i => i.Status, BusinessIdea.StatusAnalyzing));
+                .ExecuteUpdateAsync(
+                    s => s.SetProperty(i => i.Status, BusinessIdea.StatusAnalyzing),
+                    cancellationToken);
 
             if (rowsUpdated == 0)
             {
                 // Refund — we own the credit deduction but not the evaluation slot.
                 await _db.Users
                     .Where(u => u.Id == userId.Value)
-                    .ExecuteUpdateAsync(s =>
-                        s.SetProperty(u => u.EvaluationCredits, u => u.EvaluationCredits + 1));
+                    .ExecuteUpdateAsync(
+                        s => s.SetProperty(u => u.EvaluationCredits, u => u.EvaluationCredits + 1),
+                        cancellationToken);
 
                 var existing = await _db.BusinessIdeas
-                    .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value);
+                    .FirstOrDefaultAsync(
+                        i => i.IdeaId == ideaId && i.UserId == userId.Value,
+                        cancellationToken);
+
+                await transaction.CommitAsync(cancellationToken);
 
                 if (existing == null)
                     return NotFound(new { message = "Idea not found." });
@@ -88,6 +97,8 @@ namespace Mashroo3i.Controllers
 
                 return Accepted(new { message = "Evaluation already in progress.", existing.Status });
             }
+
+            await transaction.CommitAsync(cancellationToken);
 
             // ── Step 3: Fire-and-forget with a fresh DI scope ─────────────────
             // On failure, EvaluateAsync marks status = "failed" and we refund the credit.
@@ -123,7 +134,7 @@ namespace Mashroo3i.Controllers
         // GET /api/evaluation/{ideaId}/results
         // Returns the full evaluation results. Frontend polls this after calling /start.
         [HttpGet("{ideaId:guid}/results")]
-        public async Task<IActionResult> GetResults(Guid ideaId)
+        public async Task<IActionResult> GetResults(Guid ideaId, CancellationToken cancellationToken)
         {
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
@@ -132,7 +143,9 @@ namespace Mashroo3i.Controllers
                 .Include(i => i.EvaluationScores)
                 .Include(i => i.SwotAnalysis)
                 .Include(i => i.MarketAnalysis)
-                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value);
+                .FirstOrDefaultAsync(
+                    i => i.IdeaId == ideaId && i.UserId == userId.Value,
+                    cancellationToken);
 
             if (idea == null) return NotFound(new { message = "Idea not found." });
 
