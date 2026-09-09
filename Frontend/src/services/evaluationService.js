@@ -15,13 +15,13 @@
  *       swot:    null while step 2 is running
  *       market:  null while step 3 is running
  *
- * Evaluation runs 3 sequential AI steps in the background:
- *   Step 1 → scoring   (scores, verdict, summary, concerns, recommendations)
- *   Step 2 → swot      (SWOT quadrants + risk cards)
- *   Step 3 → market    (market size, competitors, differentiation, opportunities, fatal flaw)
+ * Evaluation runs 3 AI calls in parallel in the background:
+ *   scoring → scores, verdict, summary, concerns, recommendations
+ *   SWOT    → SWOT quadrants and risk cards
+ *   market  → market size, competitors, differentiation, opportunities, fatal flaw
  *
- * The frontend polls /results every 3 s. Each field appears as its step
- * completes. All three are non-null when status === "completed".
+ * The frontend polls /results every 3 s. All three sections are persisted
+ * together when the parallel work completes.
  */
 
 import api from './api'

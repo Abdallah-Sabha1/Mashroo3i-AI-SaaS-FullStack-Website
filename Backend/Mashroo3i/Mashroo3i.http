@@ -1,6 +1,83 @@
-@Mashroo3i_HostAddress = http://localhost:5057
+@host = http://localhost:5057
+@token = paste-login-access-token-here
+@ideaId = paste-created-idea-id-here
 
-GET {{Mashroo3i_HostAddress}}/weatherforecast/
-Accept: application/json
+### Register
+POST {{host}}/api/auth/register
+Content-Type: application/json
 
-###
+{
+  "fullName": "Demo Entrepreneur",
+  "email": "demo@example.com",
+  "password": "Demo@1234",
+  "education": "Computer Science",
+  "experience": "Fresh graduate",
+  "businessInterest": "Technology"
+}
+
+### Login — copy accessToken into @token
+POST {{host}}/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "demo@example.com",
+  "password": "Demo@1234"
+}
+
+### Current profile
+GET {{host}}/api/auth/me
+Authorization: Bearer {{token}}
+
+### Buy one evaluation credit — the demo success card is intentional
+POST {{host}}/api/payment/purchase
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "pack": "starter",
+  "cardNumber": "4242 4242 4242 4242",
+  "expiry": "12/30",
+  "cvv": "123"
+}
+
+### Submit idea — copy ideaId into @ideaId
+POST {{host}}/api/BusinessIdea
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "title": "Arabic Learning Platform",
+  "description": "An online platform that helps university students in Jordan practise technical interview skills using structured Arabic explanations and realistic exercises.",
+  "sector": "education",
+  "estimatedBudget": 5000
+}
+
+### List my ideas
+GET {{host}}/api/BusinessIdea
+Authorization: Bearer {{token}}
+
+### Start AI evaluation
+POST {{host}}/api/evaluation/{{ideaId}}/start
+Authorization: Bearer {{token}}
+
+### Poll evaluation results
+GET {{host}}/api/evaluation/{{ideaId}}/results
+Authorization: Bearer {{token}}
+
+### Save a financial plan
+POST {{host}}/api/financial-plans/{{ideaId}}
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "capEx": 5000,
+  "opEx": 900,
+  "ticketSize": 25,
+  "customersPerMonth": 80,
+  "grossMargin": 70,
+  "monthlyGrowth": 5
+}
+
+### Payment history
+GET {{host}}/api/payment/history
+Authorization: Bearer {{token}}

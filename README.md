@@ -109,6 +109,79 @@ An interactive 3-step financial model. Dial in your costs, revenue assumptions, 
 
 ---
 
+## Local Development
+
+Prerequisites:
+
+- .NET 10 SDK
+- Node.js 20.19 or newer
+- PostgreSQL
+- An API key for an OpenAI-compatible AI provider
+
+Create `Backend/Mashroo3i/appsettings.Development.json`. This file is ignored by Git so local secrets are not committed:
+
+```json
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Host=localhost;Port=5432;Database=mashroo3i;Username=postgres;Password=your-password"
+  },
+  "Jwt": {
+    "Key": "replace-with-a-long-random-development-secret",
+    "Issuer": "Mashroo3i",
+    "Audience": "Mashroo3i",
+    "AccessTokenExpiryMinutes": 120
+  },
+  "AIProvider": {
+    "Active": "Groq",
+    "Groq": {
+      "ApiKey": "your-api-key",
+      "Model": "your-model-name",
+      "BaseUrl": "your-provider-base-url"
+    }
+  }
+}
+```
+
+Start the backend:
+
+```powershell
+cd Backend/Mashroo3i
+dotnet restore
+dotnet ef database update
+dotnet run
+```
+
+Start the frontend in a second terminal:
+
+```powershell
+cd Frontend
+npm ci
+npm run dev
+```
+
+The frontend opens at `http://localhost:5173`, and the API uses `http://localhost:5057`. After the API starts, use `Backend/Mashroo3i/Mashroo3i.http` in Visual Studio or Rider to exercise the complete register → login → payment → idea → evaluation flow.
+
+## Backend Flow
+
+The code intentionally uses a small, interview-friendly structure:
+
+```text
+React page
+  → frontend service
+  → ASP.NET Core controller
+  → focused application service when business logic is substantial
+  → EF Core DbContext
+  → PostgreSQL
+```
+
+- Controllers own HTTP concerns: authorization, status codes, and response contracts.
+- Services own reusable business operations and external AI/payment communication.
+- DTOs define data crossing the API boundary.
+- Models and `AppDbContext` define persistent application data and relationships.
+- The evaluation start operation uses a database transaction so credit deduction and status transition remain consistent.
+
+---
+
 ## Deployment
 
 See the [Deploy branch](https://github.com/Abdallah-Sabha1/Mashroo3i-AI-SaaS-FullStack-Website/tree/Deploy) for production configuration.
