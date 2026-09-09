@@ -26,17 +26,17 @@ namespace Mashroo3i.Controllers
 
         // GET /api/financial-plans/{ideaId} — returns all 6 saved slider values
         [HttpGet("{ideaId:guid}")]
-        public async Task<IActionResult> Get(Guid ideaId)
+        public async Task<IActionResult> Get(Guid ideaId, CancellationToken cancellationToken)
         {
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
             var idea = await _db.BusinessIdeas
-                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value);
+                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value, cancellationToken);
             if (idea == null) return NotFound(new { message = "Idea not found." });
 
             var plan = await _db.FinancialPlans
-                .FirstOrDefaultAsync(f => f.IdeaId == ideaId);
+                .FirstOrDefaultAsync(f => f.IdeaId == ideaId, cancellationToken);
             if (plan == null) return NotFound(new { message = "No financial plan saved yet." });
 
             return Ok(new
@@ -56,17 +56,17 @@ namespace Mashroo3i.Controllers
 
         // POST /api/financial-plans/{ideaId} — save all 6 slider inputs
         [HttpPost("{ideaId:guid}")]
-        public async Task<IActionResult> Upsert(Guid ideaId, [FromBody] SaveFinancialPlanDto dto)
+        public async Task<IActionResult> Upsert(Guid ideaId, [FromBody] SaveFinancialPlanDto dto, CancellationToken cancellationToken)
         {
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
             var idea = await _db.BusinessIdeas
-                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value);
+                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value, cancellationToken);
             if (idea == null) return NotFound(new { message = "Idea not found." });
 
             var existing = await _db.FinancialPlans
-                .FirstOrDefaultAsync(f => f.IdeaId == ideaId);
+                .FirstOrDefaultAsync(f => f.IdeaId == ideaId, cancellationToken);
 
             if (existing != null)
             {
@@ -93,25 +93,25 @@ namespace Mashroo3i.Controllers
                 });
             }
 
-            await _db.SaveChangesAsync();
+            await _db.SaveChangesAsync(cancellationToken);
             return Ok(new { message = "Financial plan saved." });
         }
 
         // POST /api/financial-plans/{ideaId}/insights — AI insights (cached)
         [HttpPost("{ideaId:guid}/insights")]
-        public async Task<IActionResult> GetInsights(Guid ideaId, [FromBody] InsightsRequestDto dto)
+        public async Task<IActionResult> GetInsights(Guid ideaId, [FromBody] InsightsRequestDto dto, CancellationToken cancellationToken)
         {
             var userId = GetUserId();
             if (userId == null) return Unauthorized();
 
             var idea = await _db.BusinessIdeas
-                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value);
+                .FirstOrDefaultAsync(i => i.IdeaId == ideaId && i.UserId == userId.Value, cancellationToken);
             if (idea == null) return NotFound(new { message = "Idea not found." });
 
             // ── Cache key: hash of all inputs that affect the insights ──────────
             var inputFingerprint = $"{dto.CapEx}|{dto.OpEx}|{dto.Ticket}|{dto.Customers}|{dto.Margin}|{dto.Growth}|{dto.Year1Revenue}|{dto.Year1Profit}|{dto.Roi}|{dto.BreakEvenMonth}";
 
-            var plan = await _db.FinancialPlans.FirstOrDefaultAsync(f => f.IdeaId == ideaId);
+            var plan = await _db.FinancialPlans.FirstOrDefaultAsync(f => f.IdeaId == ideaId, cancellationToken);
 
             // ── Return cached insights if inputs haven't changed ─────────────────
             if (plan != null
@@ -160,14 +160,14 @@ namespace Mashroo3i.Controllers
 
             try
             {
-                var result = await _ai.GenerateJsonAsync<List<InsightItem>>(prompt);
+                var result = await _ai.GenerateJsonAsync<List<InsightItem>>(prompt, cancellationToken);
 
                 // ── Persist to DB ────────────────────────────────────────────────
                 if (result != null && result.Count > 0 && plan != null)
                 {
                     plan.InsightsJson = System.Text.Json.JsonSerializer.Serialize(result);
                     plan.InsightsInputHash = inputFingerprint;
-                    await _db.SaveChangesAsync();
+                    await _db.SaveChangesAsync(cancellationToken);
                 }
 
                 return Ok(result);
