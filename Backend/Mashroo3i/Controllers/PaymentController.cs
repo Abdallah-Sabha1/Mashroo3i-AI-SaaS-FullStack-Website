@@ -44,7 +44,9 @@ namespace Mashroo3i.Controllers
         // Charges the user and adds evaluation credits to their account.
         // ─────────────────────────────────────────────────────────────────
         [HttpPost("purchase")]
-        public async Task<IActionResult> Purchase([FromBody] PurchaseCreditsDto dto)
+        public async Task<IActionResult> Purchase(
+            [FromBody] PurchaseCreditsDto dto,
+            CancellationToken cancellationToken)
         {
             var userId = GetUserId();
 
@@ -69,16 +71,16 @@ namespace Mashroo3i.Controllers
 
             if (paymentResult.Status == PaymentStatus.Failed)
             {
-                await _db.SaveChangesAsync();
+                await _db.SaveChangesAsync(cancellationToken);
                 return BadRequest(new { message = paymentResult.ErrorMessage ?? "Payment failed. Please check your card details." });
             }
 
             // Add credits to user
-            var user = await _db.Users.FindAsync(userId);
+            var user = await _db.Users.FindAsync([userId], cancellationToken);
             if (user == null) return NotFound();
 
             user.EvaluationCredits += pack.Credits;
-            await _db.SaveChangesAsync();
+            await _db.SaveChangesAsync(cancellationToken);
 
             return Ok(new
             {
@@ -94,10 +96,10 @@ namespace Mashroo3i.Controllers
         // Returns the current user's remaining evaluation credits.
         // ─────────────────────────────────────────────────────────────────
         [HttpGet("credits")]
-        public async Task<IActionResult> GetCredits()
+        public async Task<IActionResult> GetCredits(CancellationToken cancellationToken)
         {
             var userId = GetUserId();
-            var user = await _db.Users.FindAsync(userId);
+            var user = await _db.Users.FindAsync([userId], cancellationToken);
             if (user == null) return NotFound();
 
             return Ok(new { credits = user.EvaluationCredits });
@@ -108,7 +110,7 @@ namespace Mashroo3i.Controllers
         // Returns all payments for the current user, newest first.
         // ─────────────────────────────────────────────────────────────────
         [HttpGet("history")]
-        public async Task<IActionResult> GetHistory()
+        public async Task<IActionResult> GetHistory(CancellationToken cancellationToken)
         {
             var userId = GetUserId();
 
@@ -125,18 +127,10 @@ namespace Mashroo3i.Controllers
                     TransactionRef = p.TransactionRef,
                     CreatedAt = p.CreatedAt,
                 })
-                .ToListAsync();
+                .ToListAsync(cancellationToken);
 
             return Ok(payments);
         }
     }
 
-    // ── Request DTO ───────────────────────────────────────────────────────────
-    public class PurchaseCreditsDto
-    {
-        public string Pack { get; set; } = string.Empty;  // starter | value | builder
-        public string CardNumber { get; set; } = string.Empty;
-        public string Expiry { get; set; } = string.Empty;
-        public string Cvv { get; set; } = string.Empty;
-    }
 }
