@@ -108,7 +108,6 @@ const Tooltip = ({
           {source && (
             <span
               style={{
-                display: 'block',
                 marginTop: '0.4rem',
                 paddingTop: '0.4rem',
                 borderTop: '1px solid rgba(255,255,255,0.1)',
